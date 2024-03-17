@@ -2,7 +2,7 @@
 
 ## Project Description 
 
-My web-based game is Spot On. It's a playful daily* quiz game where players test both their visual knowledge and quick decision making by swiping a photo toward the (hopefully) correct of two presented words. Scoring is based on accuracy and oveall speed. There are three difficulty levels. In the future I'd like to authenticate players and allow them to connect with their friends to take part in private leaderboards.
+My web-based game is Spot On. It's a playful daily* quiz game where players test both their visual knowledge and quick decision making by swiping a photo toward the (hopefully) correct of two presented words. Scoring is based on accuracy and overall speed. There are three difficulty levels. In the future I'd like to authenticate players and allow them to connect with their friends to take part in private leaderboards.
 
 <sub>*conceptually</sub>
 
