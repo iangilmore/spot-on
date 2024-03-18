@@ -19,12 +19,12 @@ const levels = {
 let today = new Date().toLocaleDateString()
 let chosenLevel
 let gameLength = 25
-let playTime = 0
-let results = [1,0,1,0,1,1]
-let answeredCount = results.length
-let progress = answeredCount / gameLength
-let score = 0
-let accuracy = score / answeredCount
+let playTime
+let results = []
+let answeredCount
+let progress
+let score
+let accuracy
 
 /*------------------------ Cached Element References ------------------------*/
 const dateEl = document.querySelector('.date')
@@ -43,6 +43,9 @@ function init() {
   easyBtn.textContent = levels.easy.name
   medBtn.textContent = levels.medium.name
   hardBtn.textContent = levels.hard.name
+  playTime = 0
+  results = []
+  score = 0
   render()
 }
 
@@ -64,9 +67,29 @@ function render() {
 //   cancelInterval(counter)
 // }
 
-function countScore() {
-  let sum = results.reduce((prev,curr) => {
+function updateStats() {
+  answeredCount = results.length
+  progress = answeredCount / gameLength
+  score = results.reduce((prev,curr) => {
     return prev + curr
   },0)
-  score = sum
+  accuracy = score / answeredCount
+}
+
+
+
+/*-------------------------------- Temp Scaffold for testing --------------------------------*/
+
+function seedProgress(params) {
+  results.push(1,0,0,1,1,1,0,1,0,1)
+}
+
+function logVariables() {
+  seedProgress()
+  updateScore()
+  console.log(`results: ${results}`);
+  console.log(`answeredCount: ${answeredCount}`);
+  console.log(`progress: ${progress}`);
+  console.log(`score: ${score}`);
+  console.log(`accuracy: ${accuracy}`);
 }
