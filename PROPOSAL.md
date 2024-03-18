@@ -8,7 +8,7 @@ My web-based game is Spot On. It's a playful daily* quiz game where players test
 
 ## Wireframes
 
-![image](https://github.com/iangilmore/spot-on/assets/6451468/9b032f0e-ce4b-4b02-82d1-06d130279675)
+![image](https://github.com/iangilmore/spot-on/assets/6451468/0db344b1-0d83-4354-8893-3051be4a58b7)
 
 ## User Stories
 
