@@ -19,10 +19,12 @@ const levels = {
 let today = new Date().toLocaleDateString()
 let chosenLevel
 let gameLength = 25
-let playTime
-let results = []
+let playTime = 0
+let results = [1,0,1,0,1,1]
 let answeredCount = results.length
-
+let progress = answeredCount / gameLength
+let score = 0
+let accuracy = score / answeredCount
 
 /*------------------------ Cached Element References ------------------------*/
 const dateEl = document.querySelector('.date')
@@ -61,3 +63,10 @@ function render() {
 // function stopTimer() {
 //   cancelInterval(counter)
 // }
+
+function countScore() {
+  let sum = results.reduce((prev,curr) => {
+    return prev + curr
+  },0)
+  score = sum
+}
