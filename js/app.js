@@ -55,17 +55,17 @@ function render() {
 
 }
 
-// function startTimer(params) {
-//   counter = setInterval(updateTimer, 1000);
-// }
+function startTimer(params) {
+  counter = setInterval(updateTimer, 1000);
+}
 
-// function updateTimer() {
-//   playTime += 1
-// }
+function updateTimer() {
+  playTime += 1
+}
 
-// function stopTimer() {
-//   cancelInterval(counter)
-// }
+function stopTimer() {
+  clearInterval(counter);
+}
 
 function updateStats() {
   answeredCount = results.length
@@ -78,7 +78,7 @@ function updateStats() {
 
 
 
-/*-------------------------------- Temp Scaffold for testing --------------------------------*/
+/*-------------------------------- Temp functions for testing --------------------------------*/
 
 function seedProgress(params) {
   results.push(1,0,0,1,1,1,0,1,0,1)
