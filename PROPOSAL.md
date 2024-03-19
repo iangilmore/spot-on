@@ -25,6 +25,8 @@ My web-based game is Spot On. It's a playful daily* quiz game where players test
 #### Stretch Goals
 
 - As a player, I want to game's look to match my device setting (dark/light), maybe allow for overriding in a settings menu
+- As a player, I want to be able to read a quick "how to play" guide
+- As a first time player, I want to be presented with the "how to play" guide before I start the game
 - As a player, I want to review what I got wrong to learn the correct answer
 - As a player, I want to be able to see/play recent "daily" puzzles
 - As a returning player, I want to be welcomed back and be able to see my past results
