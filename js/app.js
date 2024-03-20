@@ -33,6 +33,7 @@ let accuracy
 
 /*------------------------ Cached Element References ------------------------*/
 /* Landing */
+const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
 const dateEl = document.querySelector('.date')
 const easyBtn = document.querySelector('.easy-btn')
@@ -40,6 +41,7 @@ const medBtn = document.querySelector('.med-btn')
 const hardBtn = document.querySelector('.hard-btn')
 
 /* Game */
+const gameParentEl = document.querySelector('.game-parent')
 const gameEl = document.querySelector('.game')
 const levelEl = document.querySelector('.level')
 const timerEL = document.querySelector('.timer')
@@ -77,9 +79,9 @@ function preRender() {
   timerEL.textContent = playTimeDisplay
   completeEl.flexGrow = 0
   incompleteEl.flexGrow = gameLength
-  answerAEl.textContent = "Pear"
-  answerBEl.textContent = "Apple"
-  imageEl.src = "/img/apple.jpeg"
+  answerAEl.textContent = "Clarinet"
+  answerBEl.textContent = "Oboe"
+  imageEl.src = "/img/clarinet.png"
 }
 
 async function finalRender(click) {
@@ -127,11 +129,13 @@ function updateStats() {
 }
 
 function hideLanding() {
-  landingEl.classList.add('fade-out-1s')
+  landingParentEl.classList.add('fade-out-1s')
 }
 
 function showGame() {
-  gameEl.classList.add('fade-in-1s')  
+  landingParentEl.classList.add('display-none')  
+  gameParentEl.classList.remove('display-none')  
+  gameParentEl.classList.add('fade-in-1s')  
 }
 
 /*-------------------------------- Helper functions  --------------------------------*/
