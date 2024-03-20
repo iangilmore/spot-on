@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Spot On // Clever Tagline</title>
   <script defer="" src="./js/app.js"></script>
-  <link href="/css/style.css" rel="stylesheet"></link>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,87.5,100..900;1,87.5,100..900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/css/style.css" rel="stylesheet">
+  </link>
 
 </head>
+
 <body>
-  
+  <div class="landing-parent">
+    <div class="landing">
+      <header class="header">
+        <!-- <a href="#" class="menuBtn"><span></span></a>
+          <nav class="menu">
+            <ul>
+              <li>
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              </li>
+            </ul>
+          </nav> -->
+      </header>
+      <div class="logo">
+        <h1>Spot On</h1>
+      </div>
+      <div class="tagline">
+        <h2>Clever tagline</h2>
+      </div>
+      <div class="choose">
+        <h3>Choose your level:</h3>
+      </div>
+    <div class="levels">
+      <div class="easy">
+        <button class="easy-btn focus" id="0"></button>
+      </div>
+      <div class="medium">
+        <button class="med-btn focus" id="1"></button>
+      </div>
+      <div class="hard">
+        <button class="hard-btn focus" id="2"></button>
+      </div>
+    </div>
+    <div class="date"></div>
+    </div>
+  </div>
+  <div class="game-parent display-none">
+    <div class="game">
+      <div class="game-header">
+        <div class="back"></div>
+        <div class="logo"><h2>Spot On</h2></div>
+        <div class="menu"></div>
+      </div>
+      <div class="game-area">
+        <div class="level"></div>
+        <div class="timer"></div>
+        <div class="stats">
+          <div class="progress-bar">
+            <div class="complete"></div>
+            <div class="incomplete"></div>
+          </div>
+        </div>
+        <div id="answer-a">
+          <button class="left-arrow">TBD</button>
+        </div>
+        <div id="answer-b">
+          <button class="right-arrow">TBD</button>
+        </div>
+        <div class="image">
+          <img src="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="results-parent display-none">
+
+  </div>
 </body>
+
 </html>
