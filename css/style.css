@@ -1,0 +1,313 @@
+:root {
+  color-scheme: light dark;
+
+  --light-bg: ghostwhite;
+  --light-color: darkslategray;
+  --light-code: tomato;
+
+  --dark-bg: darkslategray;
+  --dark-color: ghostwhite;
+  --dark-code: gold;
+}
+
+html {
+  box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  /* background-color: #2B2B2B; */
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(12px, 4.5vmin, 16px);
+  /* color: light-dark(#2B2B2B ,whitesmoke); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  overflow: hidden
+}
+
+.menuBtn {
+  height: 20px;
+  width: 30px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 101;
+
+  >span {
+    background-color: whitesmoke;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -1px 0 0 -15px;
+
+    &:after,
+    &:before {
+      content: '';
+      background-color: whitesmoke;
+      border-radius: 1px;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+    }
+
+    &:after {
+      top: -10px;
+    }
+
+    &:before {
+      bottom: -10px;
+    }
+  }
+}
+.landing-parent, .game-parent, .results-parent {
+/* .landing-parent{ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.landing {
+  width: 100vw;
+  height: 100dvh;
+  max-height: 768px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr .5fr .75fr 1.5fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "header"
+    "logo"
+    "tagline"
+    "choose"
+    "levels"
+    "date";
+}
+
+.header {
+  grid-area: header;
+}
+
+.logo {
+  align-self: end;
+  grid-area: logo;
+}
+
+.tagline {
+  align-self: start;
+  grid-area: tagline;
+}
+
+.choose {
+  align-self: end;
+  grid-area: choose;
+}
+
+.date {
+  align-self: start;
+  grid-area: date;
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: .5fr .5fr .5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "easy"
+    "medium"
+    "hard";
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: levels;
+}
+
+.easy {
+  grid-area: easy;
+}
+
+.medium {
+  grid-area: medium;
+}
+
+.hard {
+  grid-area: hard;
+}
+
+.game {
+  /* width: 100vw; */
+  height: 100dvh;
+  /* max-height: 768px; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  /* justify-content: center; */
+  grid-template-areas:
+    "game-header"
+    "game-area";
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  grid-area: game-header;
+}
+
+.game-area {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.05fr 0.07fr 0.08fr 0.1fr 0.7fr;
+  gap: 4px 4px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "level level"
+    "timer timer"
+    "stats stats"
+    "answer-a answer-b"
+    "image image";
+  grid-area: game-area;
+}
+
+.level {
+  grid-area: level;
+}
+
+.timer {
+  grid-area: timer;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.progress-bar {
+  display: flex;
+  height: 32px;
+}
+
+.progress-bar .complete {
+  flex-grow: 0;
+  background-color: chartreuse;
+  /* justify-content: end; */
+  padding: 4px;
+}
+
+.progress-bar .incomplete {
+  flex-grow: 1;
+  background-color: gray;
+  padding: 4px;
+  /* justify-content: end; */
+}
+
+.answer-a {
+  justify-self: end; 
+  grid-area: answer-a;
+}
+
+.answer-b {
+  justify-self: start; 
+  grid-area: answer-b;
+}
+
+.image {
+  align-self: start; 
+  grid-area: image;
+  position: relative;
+  width: 110%;
+  height: 0;
+  padding-top: calc(100% * (4 / 3));
+}
+
+.image img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  /* margin: 16px; */
+  border: 16px whitesmoke solid;
+}
+
+button {
+  font-size: clamp(20px, 4.5vmin, 24px);
+  /* min-width: 96px; */
+  width: clamp(144px, .45vmin ,256px);
+  min-height: 36px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* .left-arrow {
+
+}
+
+.right-arrow {
+
+} */
+
+/* button .focus {
+} */
+
+.display-none {
+  display: none;
+  opacity: 0;
+}
+
+.fade-in-1s {
+  animation: fade-in 1s linear forwards;
+}
+
+.fade-in-1s-delayed-1s {
+  animation: fade-in 1s linear 1s forwards;
+}
+
+.fade-out-1s {
+  animation: fade-out 1s linear forwards;
+}
+
+.fade-out-1s-delayed-1s {
+  animation: fade-out 1s linear 1s forwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; display: none; }
+  100% { opacity: 1; display: initial; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; display: initial; }
+  100% { opacity: 0; display: none; }
+}
