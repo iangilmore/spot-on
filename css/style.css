@@ -275,9 +275,9 @@ body {
   padding-top: calc(100% * (4 / 3));
 }
 
-.images {
+/* .images {
 
-}
+} */
 
 .image-container {
   position: absolute;

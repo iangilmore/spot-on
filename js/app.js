@@ -1,5 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-import JSONdata from '../data/data.json' assert { type: 'json' };
 const levels = {
   "0": {
     "value": 0,
@@ -32,6 +31,8 @@ let remainingCount
 let progress
 let score
 let accuracy
+
+let JSONdata
 
 let images = [[],[],[]]
 let currentImageIndex = 0
@@ -85,10 +86,23 @@ function init() {
   results = []
   remainingCount = gameLength - answeredCount
   score = 0
-  preRender()
+  handleData()
 }
 
 init()
+
+function handleData(params) {
+  fetch('../data/data.json')
+    .then(response => response.json())  // Parse the JSON response
+    .then(data => {
+      JSONdata = data
+      // console.log(JSONdata[0]);
+      preRender()
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    })
+  }
 
 function preRender() {
   timerEL.textContent = playTimeDisplay
