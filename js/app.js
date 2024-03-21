@@ -22,6 +22,7 @@ const levels = {
 let today = new Date().toLocaleDateString()
 let chosenLevel
 let gameLength = 10
+let counter
 let playTimeSeconds
 let playTimeDisplay
 let results = []
@@ -30,6 +31,10 @@ let remainingCount
 let progress
 let score
 let accuracy
+
+import JSONdata from '../data/data.json' assert {type: 'json'}
+let images = [[],[],[]]
+let currentImageIndex = 0
 
 /*------------------------ Cached Element References ------------------------*/
 /* Landing */
@@ -46,21 +51,52 @@ const gameEl = document.querySelector('.game')
 const levelEl = document.querySelector('.level')
 const timerEL = document.querySelector('.timer')
 const statsEl = document.querySelector('.stats')
-const completeEl = document.querySelector('.complete')
-const incompleteEl = document.querySelector('.incomplete')
-const answerAEl = document.querySelector('#answer-a button')
-const answerBEl = document.querySelector('#answer-b button')
-const imageEl = document.querySelector('.image img')
+const completeEl = document.querySelector('#complete')
+const completeCountEl = document.querySelector('#complete-count')
+const incompleteEl = document.querySelector('#incomplete')
+const totalCountEl = document.querySelector('#total-count')
+const answerAEl = document.querySelector('#answer-a')
+const answerBEl = document.querySelector('#answer-b')
+const imageEl = document.querySelector('#current-image')
+const imageCreditEl = document.querySelector('#credit')
 
 /* Results */
+//TKTKTK
 
 /*----------------------------- Event Listeners -----------------------------*/
 easyBtn.addEventListener('click',finalRender)
 medBtn.addEventListener('click',finalRender)
 hardBtn.addEventListener('click',finalRender)
 
+imageEl.addEventListener('touchstart',handleTouchStart)
+imageEl.addEventListener('touchmove',handleTouchMove)
+imageEl.addEventListener('touchend',handleTouchEnd)
+imageEl.addEventListener('touchcancel',handleTouchCancel)
+
 
 /*-------------------------------- Functions --------------------------------*/
+
+function handleTouchStart(event) {
+  event.preventDefault()
+  console.log(event)
+  if(event.touches ) {return}
+}
+
+function handleTouchMove(event) {
+  event.preventDefault()
+  console.log(event)
+}
+
+function handleTouchEnd(event) {
+  event.preventDefault()
+  console.log(event)
+}
+
+function handleTouchCancel(event) {
+  event.preventDefault()
+  console.log(event)
+}
+
 function init() {
   dateEl.textContent = today
   easyBtn.textContent = levels[0].name
@@ -69,6 +105,7 @@ function init() {
   playTimeSeconds = 0
   playTimeDisplay = "0:00"
   results = []
+  remainingCount = gameLength - answeredCount
   score = 0
   preRender()
 }
@@ -78,15 +115,16 @@ init()
 function preRender() {
   timerEL.textContent = playTimeDisplay
   completeEl.flexGrow = 0
-  incompleteEl.flexGrow = gameLength
-  answerAEl.textContent = "Clarinet"
-  answerBEl.textContent = "Oboe"
-  imageEl.src = "/img/clarinet.png"
+  incompleteEl.flexGrow = remainingCount
+  totalCountEl.textContent = gameLength
+  answerAEl.textContent = JSONdata[currentImageIndex].correct
+  answerBEl.textContent = JSONdata[currentImageIndex].incorrects[0]
+  imageEl.src = JSONdata[currentImageIndex].url
+  imageCreditEl.innerHTML = JSONdata[currentImageIndex].credit
 }
 
 async function finalRender(click) {
   chosenLevel = click.target.id
-  console.log(click.target.id);
   levelEl.textContent = levels[chosenLevel].name
   hideLanding()
   await delay(1000)
@@ -115,12 +153,20 @@ function stopTimer() {
   clearInterval(counter)
 }
 
+function queueImages(params) {
+    JSONdata
+}
+
+function gradeAnswer(params) {
+  
+}
+
 function updateStats() {
   answeredCount = results.length
-  // completeEl.
-  completeEl.textContent = answeredCount
+  completeCountEl.textContent = answeredCount
+  completeEl.style.flexGrow = answeredCount
   remainingCount = gameLength - answeredCount
-  incompleteEl.textContent = remainingCount
+  incompleteEl.style.flexGrow = remainingCount
   progress = answeredCount / gameLength
   score = results.reduce((prev,curr) => {
     return prev + curr
@@ -155,7 +201,7 @@ function demoInConsole() {
 }
 
 function seedProgress(params) {
-  results.push(1,0,0,1,1,1,0,1,0,1)
+  results.push(1,0,1,0,1,0,1)
 }
 
 function logVariables() {
