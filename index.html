@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spot On // Clever Tagline</title>
+  <script defer="" src="./js/hammer.min.js"></script>
   <script defer="" type="module" src="./js/app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,11 +83,19 @@
         </div>
         <div id="answer-a" class="choice">TBD</div>
         <div id="answer-b" class="choice">TBD</div>
-        <div class="image">
-          <!-- <img id="current-image" draggable="true" src=""> -->
-          <img id="current-image" src="">
-          <div id="credit"></div>
-        </div>
+        <div class="images">
+          <div class="image-container current">
+            <img class="image" src="">
+            <div class="credit"></div>
+          </div>
+          <div class="image-container next">
+            <img class="image" src="">
+            <div class="credit"></div>
+          </div>
+          <div class="image-container inactive">
+            <img class="image" src="">
+            <div class="credit"></div>
+          </div>
       </div>
     </div>
   </div>
