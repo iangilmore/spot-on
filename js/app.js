@@ -1,4 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
+import JSONdata from '../data/data.json' assert { type: 'json' };
 const levels = {
   "0": {
     "value": 0,
@@ -32,7 +33,6 @@ let progress
 let score
 let accuracy
 
-import JSONdata from '../data/data.json' assert {type: 'json'}
 let images = [[],[],[]]
 let currentImageIndex = 0
 
@@ -57,9 +57,12 @@ const incompleteEl = document.querySelector('#incomplete')
 const totalCountEl = document.querySelector('#total-count')
 const answerAEl = document.querySelector('#answer-a')
 const answerBEl = document.querySelector('#answer-b')
-const imageEl = document.querySelector('#current-image')
-const imageCreditEl = document.querySelector('#credit')
+const imageEl = document.querySelector('.image')
+const imageCreditEl = document.querySelector('.credit')
+const currentImageEl = document.querySelector('.image-container, .current')
 
+
+const imageTouchEl = Hammer(currentImageEl)
 /* Results */
 //TKTKTK
 
@@ -68,34 +71,9 @@ easyBtn.addEventListener('click',finalRender)
 medBtn.addEventListener('click',finalRender)
 hardBtn.addEventListener('click',finalRender)
 
-imageEl.addEventListener('touchstart',handleTouchStart)
-imageEl.addEventListener('touchmove',handleTouchMove)
-imageEl.addEventListener('touchend',handleTouchEnd)
-imageEl.addEventListener('touchcancel',handleTouchCancel)
-
+imageTouchEl.on("swipeleft swiperight", answerHandler)
 
 /*-------------------------------- Functions --------------------------------*/
-
-function handleTouchStart(event) {
-  event.preventDefault()
-  console.log(event)
-  if(event.touches ) {return}
-}
-
-function handleTouchMove(event) {
-  event.preventDefault()
-  console.log(event)
-}
-
-function handleTouchEnd(event) {
-  event.preventDefault()
-  console.log(event)
-}
-
-function handleTouchCancel(event) {
-  event.preventDefault()
-  console.log(event)
-}
 
 function init() {
   dateEl.textContent = today
@@ -182,6 +160,19 @@ function showGame() {
   landingParentEl.classList.add('display-none')  
   gameParentEl.classList.remove('display-none')  
   gameParentEl.classList.add('fade-in-1s')  
+}
+
+function answerHandler(event) {
+  if (event.type === 'swipeleft') {
+    console.log(`Answered A`);
+    currentImageEl.classList.add('answered-a')
+  } else if (event.type === 'swiperight') {
+    console.log(`Answered B`);
+    currentImageEl.classList.add('answered-b')
+  } else {
+    
+  }
+
 }
 
 /*-------------------------------- Helper functions  --------------------------------*/
