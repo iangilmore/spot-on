@@ -1,7 +1,8 @@
 [
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/6230092/apple-fruit-red-healthy-sweet-2.jpg",
+    "url": "/img/shelley-pauls-I58f47LRQYM-unsplash.jpg",
+    "credit" : "Photo by <a href=\"https://unsplash.com/@shelleypauls?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\">Shelley Pauls</a> on Unsplash",
     "correct": "Apple",
     "incorrects": ["Peach", "Pear"],
     "answerHistory": {
@@ -12,9 +13,10 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/277019/bicycle-bike-cycle-transportation-2.jpg",
+    "url": "img/adam-stefanca-JrM_SWb2gJA-unsplash.jpg",
+    "credit" : "Photo by <a href=\"https://unsplash.com/@adam_stefanca?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\">Adam Stefanca</a> on Unsplash",
     "correct": "Bicycle",
-    "incorrects": ["Scooter", "Motorcycle"],
+    "incorrects": ["Tricycle", "Scooter"],
     "answerHistory": {
       "correct": 0,
       "incorrect": 0
@@ -23,7 +25,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1121120/book-open-pages-publication-knowledge-2.jpg",
+    "url": "img/studio-media-9DaOYUYnOls-unsplash.jpg",
+    "credit" : "Photo by <a href=\"https://unsplash.com/@studiomediainc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\">Studio Media</a> on Unsplash",
     "correct": "Book",
     "incorrects": ["Magazine", "Newspaper"],
     "answerHistory": {
@@ -34,7 +37,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/4285138/bus-vehicle-transportation-yellow-school-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Bus",
     "incorrects": ["Train", "Car"],
     "answerHistory": {
@@ -45,7 +49,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2235183/cat-pet-feline-animal-portrait-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Cat",
     "incorrects": ["Dog", "Rabbit"],
     "answerHistory": {
@@ -56,7 +61,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1817303/chair-furniture-wooden-seat-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Chair",
     "incorrects": ["Table", "Couch"],
     "answerHistory": {
@@ -67,7 +73,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2700745/clock-watch-time-antique-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Clock",
     "incorrects": ["Watch", "Timer"],
     "answerHistory": {
@@ -78,9 +85,10 @@
   },
   {
     "levelValue": 0,
+    "url": "",
+    "credit" : "",
     "correct": "Cloud",
     "incorrects": ["Sky", "Water"],
-    "url": "https://pixabay.com/images/id/1581671/cloud-sky-white-fluffy-2.jpg",
     "answerHistory": {
       "correct": 0,
       "incorrect": 0
@@ -88,7 +96,8 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/4319248/cup-mug-coffee-ceramic-tea-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Cup",
     "incorrects": ["Mug", "Glass"],
     "answerHistory": {
@@ -99,393 +108,10 @@
   },
   {
     "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1200345/door-wooden-door-entrance-knob-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Door",
     "incorrects": ["Window", "Wall"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2145373/dress-clothing-fashion-female-2.jpg",
-    "correct": "Dress",
-    "incorrects": ["Shirt", "Pants"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/428731/earth-planet-globe-world-2.jpg",
-    "correct": "Earth",
-    "incorrects": ["Moon", "Sun"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1181712/eye-look-see-gaze-2.jpg",
-    "correct": "Eye",
-    "incorrects": ["Nose", "Ear"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1437649/face-human-head-portrait-smile-2.jpg",
-    "correct": "Face",
-    "incorrects": ["Head", "Hair"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2279482/fish-goldfish-underwater-water-2.jpg",
-    "correct": "Fish",
-    "incorrects": ["Shark", "Whale"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1463387/flower-bloom-blossom-nature-2.jpg",
-    "correct": "Flower",
-    "incorrects": ["Plant", "Tree"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1817331/fork-cutlery-silverware-utensil-2.jpg",
-    "correct": "Fork",
-    "incorrects": ["Spoon", "Knife"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/844358/frog-amphibian-animal-green-2.jpg",
-    "correct": "Frog",
-    "incorrects": ["Toad", "Lizard"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1680460/dog-pet-canine-golden-retriever-2.jpg",
-    "correct": "Dog",
-    "incorrects": ["Cat", "Horse"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1437151/chair-furniture-wooden-seat-2.jpg",
-    "correct": "Chair",
-    "incorrects": ["Table", "Couch"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/4283374/clock-time-pocket-watch-antique-2.jpg",
-    "correct": "Clock",
-    "incorrects": ["Watch", "Timer"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "correct": "Cloud",
-    "incorrects": ["Sky", "Water"],
-    "url": "https://pixabay.com/images/id/1581671/cloud-sky-white-fluffy-2.jpg",
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    }
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/4319248/cup-mug-coffee-ceramic-tea-2.jpg",
-    "correct": "Cup",
-    "incorrects": ["Mug", "Glass"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1200345/door-wooden-door-entrance-knob-2.jpg",
-    "correct": "Door",
-    "incorrects": ["Window", "Wall"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2145373/dress-clothing-fashion-female-2.jpg",
-    "correct": "Dress",
-    "incorrects": ["Shirt", "Pants"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/428731/earth-planet-globe-world-2.jpg",
-    "correct": "Earth",
-    "incorrects": ["Moon", "Sun"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1181712/eye-look-see-gaze-2.jpg",
-    "correct": "Eye",
-    "incorrects": ["Nose", "Ear"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1437649/face-human-head-portrait-smile-2.jpg",
-    "correct": "Face",
-    "incorrects": ["Head", "Hair"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2279482/fish-goldfish-underwater-water-2.jpg",
-    "correct": "Fish",
-    "incorrects": ["Shark", "Whale"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1463387/flower-bloom-blossom-nature-2.jpg",
-    "correct": "Flower",
-    "incorrects": ["Plant", "Tree"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1817331/fork-cutlery-silverware-utensil-2.jpg",
-    "correct": "Fork",
-    "incorrects": ["Spoon", "Knife"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/844358/frog-amphibian-animal-green-2.jpg",
-    "correct": "Frog",
-    "incorrects": ["Toad", "Lizard"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1047334/hand-human-body-arm-fingers-2.jpg",
-    "correct": "Hand",
-    "incorrects": ["Arm", "Leg"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2235266/hat-accessory-clothing-fashion-2.jpg",
-    "correct": "Hat",
-    "incorrects": ["Shirt", "Shoes"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2487302/house-building-home-residential-2.jpg",
-    "correct": "House",
-    "incorrects": ["Building", "School"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1181428/ice-cream-food-dessert-sweet-2.jpg",
-    "correct": "Ice Cream",
-    "incorrects": ["Cake", "Candy"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1493073/key-lock-open-door-security-2.jpg",
-    "correct": "Key",
-    "incorrects": ["Lock", "Handle"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1244250/knife-cutlery-silverware-kitchen-2.jpg",
-    "correct": "Knife",
-    "incorrects": ["Fork", "Spoon"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1443364/light-bulb-idea-lamp-electricity-2.jpg",
-    "correct": "Light Bulb",
-    "incorrects": ["Lamp", "Shade"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1825843/milk-liquid-white-dairy-2.jpg",
-    "correct": "Milk",
-    "incorrects": ["Juice", "Water"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1453223/monkey-animal-mammal-wild-2.jpg",
-    "correct": "Monkey",
-    "incorrects": ["Gorilla", "Chimpanzee"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2278797/moon-earth-night-sky-space-2.jpg",
-    "correct": "Moon",
-    "incorrects": ["Sun", "Star"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/81037/mouth-face-lips-teeth-2.jpg",
-    "correct": "Mouth",
-    "incorrects": ["Nose", "Ear"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/2910177/paint-brush-art-creative-painting-2.jpg",
-    "correct": "Paint Brush",
-    "incorrects": ["Pencil", "Crayon"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 0,
-    "url": "https://pixabay.com/images/id/1495510/pants-clothing-denim-jeans-2.jpg",
-    "correct": "Pants",
-    "incorrects": ["Shirt", "Shorts"],
     "answerHistory": {
       "correct": 0,
       "incorrect": 0
@@ -494,7 +120,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2762024/quokka-animal-australia-marsupial-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Quokka",
     "incorrects": ["Wallaby", "Wombat"],
     "answerHistory": {
@@ -505,7 +132,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/1237391/instrument-violin-music-string-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Violin",
     "incorrects": ["Cello", "Double Bass"],
     "answerHistory": {
@@ -516,7 +144,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/827350/helmet-motorbike-motorcycle-biker-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Helmet",
     "incorrects": ["Hat", "Cap"],
     "answerHistory": {
@@ -527,7 +156,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4338743/sushi-food-japanese-seafood-2.jpg",
+    "url": "",
+    "credit" : "",
     "mediumCloseUp": true,
     "correct": "Sushi",
     "incorrects": ["Sashimi", "Nigiri"],
@@ -539,7 +169,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2048534/sculpture-statue-art-work-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Sculpture",
     "incorrects": ["Statue", "Bust"],
     "answerHistory": {
@@ -550,7 +181,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4088744/architecture-building-historical-basilica-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Basilica",
     "incorrects": ["Cathedral", "Abbey"],
     "answerHistory": {
@@ -561,7 +193,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4273399/eyelash-makeup-mascara-eye-2.jpg",
+    "url": "",
+    "credit" : "",
     "extremeCloseUp": true,
     "correct": "Eyelash",
     "incorrects": ["Eyebrow", "Eyeliner"],
@@ -573,7 +206,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2910172/fork-cutlery-silverware-stainless-steel-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Fork",
     "incorrects": ["Spoon", "Knife"],
     "answerHistory": {
@@ -584,7 +218,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/1496219/vehicle-transportation-truck-semi-2.jpg",
+    "url": "",
+    "credit" : "",
     "mediumCloseUp": true,
     "correct": "Truck",
     "incorrects": ["Car", "Bus"],
@@ -596,7 +231,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/1116440/flower-daisy-white-yellow-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Daisy",
     "incorrects": ["Flower", "Rose"],
     "answerHistory": {
@@ -607,87 +243,8 @@
   },
   {
     "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4444812/bread-food-bakery-sliced-2.jpg",
-    "correct": "Bread",
-    "incorrects": ["Toast", "Sandwich"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2762149/city-urban-buildings-architecture-2.jpg",
-    "mediumCloseUp": true,
-    "correct": "City",
-    "incorrects": ["Town", "Building"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4046388/cup-mug-ceramic-tea-2.jpg",
-    "correct": "Mug",
-    "incorrects": ["Cup", "Glass"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/1817220/jacket-clothing-fashion-denim-2.jpg",
-    "correct": "Jacket",
-    "incorrects": ["Shirt", "Coat"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2707411/glasses-eyewear-sunglasses-fashion-2.jpg",
-    "correct": "Sunglasses",
-    "incorrects": ["Glasses", "Goggles"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/1453223/monkey-animal-mammal-wild-2.jpg",
-    "mediumCloseUp": true,
-    "correct": "Monkey",
-    "incorrects": ["Chimpanzee", "Gorilla"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/4273404/eyelash-eye-macro-makeup-2.jpg",
-    "extremeCloseUp": true,
-    "correct": "Eyelash",
-    "incorrects": ["Eye", "Hair"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 1,
-    "url": "https://pixabay.com/images/id/2204518/gear-shift-knob-car-interior-2.jpg",
+    "url": "",
+    "credit" : "",
     "mediumCloseUp": true,
     "correct": "Gear Shift",
     "incorrects": ["Steering Wheel", "Button"],
@@ -699,7 +256,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1442540/axolotl-water-animal-mexican-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Axolotl",
     "incorrects": ["Salamander", "Newt"],
     "answerHistory": {
@@ -710,7 +268,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2278279/architecture-building-mosque-islam-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Mosque",
     "incorrects": ["Church", "Temple"],
     "answerHistory": {
@@ -721,7 +280,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4283123/camera-slr-photography-lens-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "SLR Camera",
     "incorrects": ["Camera", "Digital Camera"],
     "answerHistory": {
@@ -732,7 +292,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2189822/violin-instrument-music-wood-2.jpg",
+    "url": "",
+    "credit" : "",
     "partOf": "Violin",
     "incorrects": ["Bow", "Strings"],
     "answerHistory": {
@@ -743,7 +304,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4034023/gondola-venice-italy-canal-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Gondola",
     "incorrects": ["Boat", "Canoe"],
     "answerHistory": {
@@ -754,7 +316,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1865054/architecture-building-castle-medieval-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Castle",
     "incorrects": ["Fort", "Palace"],
     "answerHistory": {
@@ -765,7 +328,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/414745/cactus-desert-plant-thorny-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Cactus",
     "incorrects": ["Plant", "Succulent"],
     "answerHistory": {
@@ -776,7 +340,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2235133/architecture-building-japan-temple-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Pagoda",
     "incorrects": ["Temple", "Shrine"],
     "answerHistory": {
@@ -787,7 +352,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2793533/eye-macro-close-up-iris-2.jpg",
+    "url": "",
+    "credit" : "",
     "partOf": "Eye",
     "incorrects": ["Eyelash", "Eyebrow"],
     "answerHistory": {
@@ -798,7 +364,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4393533/architecture-building-basilica-st-peters-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Basilica",
     "incorrects": ["Cathedral", "Church"],
     "answerHistory": {
@@ -809,7 +376,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2204971/architecture-building-apartment-residential-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Apartment",
     "incorrects": ["Building", "House"],
     "answerHistory": {
@@ -820,7 +388,8 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1473337/plate-food-dinner-dish-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Plate",
     "incorrects": ["Dish", "Bowl"],
     "answerHistory": {
@@ -831,482 +400,10 @@
   },
   {
     "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4083530/keyboard-computer-technology-office-2.jpg",
+    "url": "",
+    "credit" : "",
     "correct": "Keyboard",
     "incorrects": ["Input Device", "Peripheral"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1819012/architecture-building-white-house-washington-2.jpg",
-    "correct": "White House",
-    "incorrects": ["Building", "Government Building"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1121704/bread-sliced-toast-breakfast-2.jpg",
-    "correct": "Toast",
-    "incorrects": ["Bread", "Food"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2144808/architecture-building-statue-of-liberty-2.jpg",
-    "correct": "Statue of Liberty",
-    "incorrects": ["Statue", "Landmark"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1281129/microscope-science-laboratory-research-2.jpg",
-    "correct": "Microscope",
-    "incorrects": ["Tool", "Instrument"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2235264/architecture-building-notre-dame-cathedral-2.jpg",
-    "correct": "Notre Dame",
-    "incorrects": ["Cathedral", "Church"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2767018/clothing-fashion-jacket-denim-2.jpg",
-    "correct": "Jacket",
-    "incorrects": ["Clothing", "Shirt"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4296724/camera-film-photography-vintage-2.jpg",
-    "correct": "Film Camera",
-    "incorrects": ["Camera", "Digital Camera"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2643598/glasses-eyewear-fashion-hipster-2.jpg",
-    "correct": "Glasses",
-    "incorrects": ["Eyewear", "Sunglasses"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1181350/architecture-building-eiffel-tower-paris-2.jpg",
-    "correct": "Eiffel Tower",
-    "incorrects": ["Tower", "Building"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2432472/pizza-food-italian-cheese-2.jpg",
-    "correct": "Pizza",
-    "incorrects": ["Food", "Dish"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4442024/tennis-court-net-sports-2.jpg",
-    "correct": "Tennis Court",
-    "incorrects": ["Court", "Field"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2553447/apple-fruit-red-healthy-2.jpg",
-    "correct": "Apple",
-    "incorrects": ["Food", "Produce"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4078544/book-literature-knowledge-study-2.jpg",
-    "correct": "Book",
-    "incorrects": ["Object", "Item"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2007686/bird-chicken-animal-nature-2.jpg",
-    "correct": "Chicken",
-    "incorrects": ["Animal", "Bird"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4338743/bridge-golden-gate-san-francisco-usa-2.jpg",
-    "correct": "Golden Gate Bridge",
-    "incorrects": ["Bridge", "Suspension Bridge"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1817411/bus-vehicle-transportation-yellow-2.jpg",
-    "correct": "Bus",
-    "incorrects": ["Vehicle", "Car"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2790935/clock-time-round-face-2.jpg",
-    "correct": "Clock",
-    "incorrects": ["Watch", "Timepiece"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4259423/computer-desktop-technology-electronic-2.jpg",
-    "correct": "Computer",
-    "incorrects": ["Machine", "Device"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1182284/crown-royalty-king-queen-2.jpg",
-    "correct": "Crown",
-    "incorrects": ["Headwear", "Jewelry"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1804983/dog-pet-canine-animal-2.jpg",
-    "correct": "Dog",
-    "incorrects": ["Animal", "Mammal"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2104444/earth-globe-world-planet-2.jpg",
-    "correct": "Globe",
-    "incorrects": ["Ball", "Sphere"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4040248/flag-america-american-united-states-2.jpg",
-    "correct": "American Flag",
-    "incorrects": ["Flag", "Banner"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4343424/glasses-sunglasses-fashion-style-2.jpg",
-    "correct": "Sunglasses",
-    "incorrects": ["Eyewear", "Glasses"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2278751/house-building-architecture-residential-2.jpg",
-    "correct": "House",
-    "incorrects": ["Building", "Structure"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2762119/ice-cream-food-dessert-sweet-2.jpg",
-    "correct": "Ice Cream",
-    "incorrects": ["Food", "Dessert"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4279202/instrument-music-guitar-acoustic-2.jpg",
-    "correct": "Guitar",
-    "incorrects": ["Instrument", "String Instrument"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4089244/light-bulb-idea-illumination-energy-2.jpg",
-    "correct": "Light Bulb",
-    "incorrects": ["Light", "Source"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2444848/paintbrush-art-painting-watercolor-2.jpg",
-    "correct": "Paintbrush",
-    "incorrects": ["Brush", "Tool"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/837225/pencil-lead-stationary-school-2.jpg",
-    "correct": "Pencil",
-    "incorrects": ["Writing tool", "Utensil"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1181421/phone-smartphone-technology-communication-2.jpg",
-    "correct": "Phone",
-    "incorrects": ["Device", "Electronics"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2204518/pizza-slice-food-italian-cheese-2.jpg",
-    "correct": "Pizza Slice",
-    "incorrects": ["Pizza", "Food"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2740320/plant-cactus-green-nature-2.jpg",
-    "correct": "Cactus",
-    "incorrects": ["Plant", "Flora"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2795109/rainbow-sky-weather-colorful-2.jpg",
-    "correct": "Rainbow",
-    "incorrects": ["Sky", "Weather"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2879698/restaurant-food-building-dinner-2.jpg",
-    "correct": "Restaurant",
-    "incorrects": ["Building", "Place"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4089302/ring-jewelry-diamond-gold-2.jpg",
-    "correct": "Ring",
-    "incorrects": ["Jewelry", "Accessory"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1254429/shoe-sneaker-fashion-sport-2.jpg",
-    "correct": "Shoe",
-    "incorrects": ["Clothing", "Footwear"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/264158/ship-boat-water-ocean-2.jpg",
-    "correct": "Ship",
-    "incorrects": ["Boat", "Vessel"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2120434/stairs-steps-staircase-building-2.jpg",
-    "correct": "Stairs",
-    "incorrects": ["Step", "Ladder"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/810370/sun-sky-hot-summer-2.jpg",
-    "correct": "Sun",
-    "incorrects": ["Star", "Sky"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/3431518/壽司-sushi-japanese-food-seafood-2.jpg",
-    "correct": "Sushi",
-    "incorrects": ["Food", "Dish"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/1181279/table-furniture-wood-home-2.jpg",
-    "correct": "Table",
-    "incorrects": ["Furniture", "Surface"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/2273075/taxi-yellow-cab-transportation-city-2.jpg",
-    "correct": "Taxi",
-    "incorrects": ["Car", "Vehicle"],
-    "answerHistory": {
-      "correct": 0,
-      "incorrect": 0
-    },
-    "active": true
-  },
-  {
-    "levelValue": 2,
-    "url": "https://pixabay.com/images/id/4078520/tree-nature-green-plant-2.jpg",
-    "correct": "Tree",
-    "incorrects": ["Plant", "Flora"],
     "answerHistory": {
       "correct": 0,
       "incorrect": 0
