@@ -16,10 +16,16 @@ const levels = {
     "name": "Savant"
   }
 }
+const dateOptions = {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+}
+const today = new Date().toLocaleDateString('en-US', dateOptions)
+
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let today = new Date().toLocaleDateString()
 let chosenLevel
 let gameLength = 10
 let counter
@@ -32,10 +38,14 @@ let progress
 let score
 let accuracy
 
-let JSONdata
+let JSONData
 
-let images = [[],[],[]]
-let currentImageIndex = 0
+let currentImageEl
+let imageTouchEl
+let images = []
+let imageCards = []
+
+let currentImageIndex = 0 // Always starts at 0, will eventually update after each answer is submitted
 
 /*------------------------ Cached Element References ------------------------*/
 /* Landing */
@@ -60,21 +70,19 @@ const answerAEl = document.querySelector('#answer-a')
 const answerBEl = document.querySelector('#answer-b')
 const imageEl = document.querySelector('.image')
 const imageCreditEl = document.querySelector('.credit')
-const currentImageEl = document.querySelector('.image-container, .current')
 
 
-const imageTouchEl = Hammer(currentImageEl)
 /* Results */
 //TKTKTK
 
 /*----------------------------- Event Listeners -----------------------------*/
-easyBtn.addEventListener('click',finalRender)
-medBtn.addEventListener('click',finalRender)
-hardBtn.addEventListener('click',finalRender)
-
-imageTouchEl.on("swipeleft swiperight", answerHandler)
+easyBtn.addEventListener('click',render)
+medBtn.addEventListener('click',render)
+hardBtn.addEventListener('click',render)
 
 /*-------------------------------- Functions --------------------------------*/
+
+init()
 
 function init() {
   dateEl.textContent = today
@@ -82,47 +90,103 @@ function init() {
   medBtn.textContent = levels[1].name
   hardBtn.textContent = levels[2].name
   playTimeSeconds = 0
-  playTimeDisplay = "0:00"
+  playTimeDisplay = '0:00'
   results = []
   remainingCount = gameLength - answeredCount
   score = 0
+  timerEL.textContent = playTimeDisplay
+  completeEl.flexGrow = 0
+  incompleteEl.flexGrow = remainingCount
+  totalCountEl.textContent = gameLength
   handleData()
 }
 
-init()
-
 function handleData(params) {
   fetch('../data/data.json')
-    .then(response => response.json())  // Parse the JSON response
+    .then(response => response.json())
     .then(data => {
-      JSONdata = data
-      // console.log(JSONdata[0]);
-      preRender()
+      JSONData = data
+      // render()
     })
     .catch(error => {
       console.error('Error fetching data:', error);
     })
   }
 
-function preRender() {
-  timerEL.textContent = playTimeDisplay
-  completeEl.flexGrow = 0
-  incompleteEl.flexGrow = remainingCount
-  totalCountEl.textContent = gameLength
-  answerAEl.textContent = JSONdata[currentImageIndex].correct
-  answerBEl.textContent = JSONdata[currentImageIndex].incorrects[0]
-  imageEl.src = JSONdata[currentImageIndex].url
-  imageCreditEl.innerHTML = JSONdata[currentImageIndex].credit
-}
-
-async function finalRender(click) {
-  chosenLevel = click.target.id
+function render(click) {
+  chosenLevel = parseInt(click.target.id)
   levelEl.textContent = levels[chosenLevel].name
   hideLanding()
-  await delay(1000)
+  getLevelImages()
+  buildImageCards()
+  //   // These element assignments should instead be handed via buildImageCards
+  //   imageEl.src = JSONData[currentImageIndex].url 
+  //   imageCreditEl.innerHTML = JSONData[currentImageIndex].credit
+  // // updateAnswerOptions() // Draft
+  //   // These element assigments should instad be handled via updateAnswerOptions
+  //   answerAEl.textContent = JSONData[currentImageIndex].correct
+  //   answerBEl.textContent = JSONData[currentImageIndex].incorrects[0]
+  // addTouchToCurrentImageCard()
   showGame()
-  await delay(1000)
   startGame()
+}
+
+function hideLanding() {
+  landingParentEl.classList.add('fade-out-1s')
+}
+
+function getLevelImages() {
+  images = []
+  let count = 0
+  for (const image of JSONData) {
+    if (image.levelValue === chosenLevel && count < gameLength) {
+      images.push(image)
+      count++
+    }
+  }
+  return images
+}
+
+function buildImageCards() {
+  const imageCardsContainer = document.getElementById('image-cards')
+  if (imageCardsContainer) {
+    for (const image of images) {
+      const imageCard = document.createElement('div')
+      imageCard.classList.add('image-card')
+      const imageElement = document.createElement('img')
+      imageElement.classList.add('image')
+      imageElement.src = image.url
+      const creditDiv = document.createElement('div')
+      creditDiv.classList.add('credit')
+      creditDiv.innerHTML = image.credit
+      imageCard.appendChild(imageElement)
+      imageCard.appendChild(creditDiv)
+      imageCardsContainer.appendChild(imageCard)
+    }
+  } else {
+    console.error(`Image cards container not found in the DOM`)
+  }
+  imageCards = [...document.querySelectorAll('.image-card')]
+  let firstImageCard = imageCards[0]
+  firstImageCard.classList.add('current')
+  let nextImageCard = imageCards[1]
+  nextImageCard.classList.add('next')
+}
+
+function updateAnswerOptions() {
+  // use the index of the levels array
+}
+
+function addTouchToCurrentImageCard() {
+  currentImageEl = document.querySelector('.image-card, .current')
+  imageTouchEl = Hammer(currentImageEl)
+  imageTouchEl.on('swipeleft swiperight', answerHandler)
+}
+
+function showGame() {
+  landingParentEl.classList.add('display-none')  
+  gameParentEl.classList.remove('display-none')  
+  gameParentEl.classList.add('fade-in-1s-delayed-1s')
 }
 
 function startGame() {
@@ -145,14 +209,6 @@ function stopTimer() {
   clearInterval(counter)
 }
 
-function queueImages(params) {
-    JSONdata
-}
-
-function gradeAnswer(params) {
-  
-}
-
 function updateStats() {
   answeredCount = results.length
   completeCountEl.textContent = answeredCount
@@ -166,36 +222,32 @@ function updateStats() {
   accuracy = score / answeredCount
 }
 
-function hideLanding() {
-  landingParentEl.classList.add('fade-out-1s')
-}
-
-function showGame() {
-  landingParentEl.classList.add('display-none')  
-  gameParentEl.classList.remove('display-none')  
-  gameParentEl.classList.add('fade-in-1s')  
-}
-
 function answerHandler(event) {
   if (event.type === 'swipeleft') {
-    console.log(`Answered A`);
     currentImageEl.classList.add('answered-a')
   } else if (event.type === 'swiperight') {
-    console.log(`Answered B`);
     currentImageEl.classList.add('answered-b')
   } else {
-    
+    console.log(`This else logic shouldn't ever be possible, fix it.`);
   }
+  updateImageClasses()
+}
 
+function updateImageClasses() {
+  const currentImageIndex = imageCards.findIndex( 
+    (el) => el.classList.contains('current')
+    )
+  const currentImage = imageCards[currentImageIndex]
+  const nextImage = imageCards[currentImageIndex + 1]
+  const nextNextImage = imageCards[currentImageIndex + 2]
+  nextImage.classList.add('current')
+  nextImage.classList.remove('next')
+  nextNextImage.classList.add('next')
+  currentImage.classList.remove('current')
 }
 
 /*-------------------------------- Helper functions  --------------------------------*/
 
-function delay(milliseconds){
-  return new Promise(resolve => {
-      setTimeout(resolve, milliseconds);
-  });
-}
 
 /*-------------------------------- Temp functions for testing --------------------------------*/
 
