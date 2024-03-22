@@ -45,7 +45,13 @@ let imageTouchEl
 let images = []
 let imageCards = []
 
-let currentImageIndex = 0 // Always starts at 0, will eventually update after each answer is submitted
+let currentImageIndex = 0
+
+let currentImageCard
+let correctAnswer
+let incorrectAnswer
+let answerA
+let answerB
 
 /*------------------------ Cached Element References ------------------------*/
 /* Landing */
@@ -167,13 +173,17 @@ function buildImageCards() {
   nextImageCard.classList.add('next')
 }
 
+
+
 function updateAnswerOptions(imageIndex) {
-  const currentImageCard = images[imageIndex]
-  const correctAnswer = currentImageCard.correct
-  const incorrectAnswer = currentImageCard.incorrects[0]
+  currentImageCard = images[imageIndex]
+  correctAnswer = currentImageCard.correct
+  incorrectAnswer = currentImageCard.incorrects[0]
   const answers = [correctAnswer, incorrectAnswer]
   answers.sort(() => Math.random() - 0.5)
+  answerA = answers[0]
   answerAEl.textContent = answers[0]
+  answerB = answers[1]
   answerBEl.textContent = answers[1]
 }
 
@@ -181,14 +191,8 @@ function addTouchToCurrentImageCard() {
   const currentImageIndex = imageCards.findIndex( 
     (el) => el.classList.contains('current')
     )
-  console.log(`imageCards[${currentImageIndex}]:`)
-  console.log(currentImageIndex)
   currentImageEl = imageCards[currentImageIndex]
-  console.log(`currentImageEl:`);
-  console.log(currentImageEl);
   imageTouchEl = Hammer(currentImageEl)
-  console.log(`imageTouchEl:`)
-  console.log(imageTouchEl)
   imageTouchEl.on('swipeleft swiperight', answerHandler)
 }
 
@@ -234,12 +238,26 @@ function updateStats() {
 function answerHandler(event) {
   if (event.type === 'swipeleft') {
     currentImageEl.classList.add('answered-a')
+    if (answerA == correctAnswer) {
+      results.push(1)
+    } else if (answerA == incorrectAnswer) {
+      results.push(0)
+    } else {console.log(`wha?`);}
   } else if (event.type === 'swiperight') {
     currentImageEl.classList.add('answered-b')
-  } else {
+    if (answerB == correctAnswer) {
+      results.push(1)
+    } else if (answerB == incorrectAnswer) {
+      results.push(0)
+    } else {console.log(`wha?`);}  } else {
     console.log(`This else logic shouldn't ever be possible, fix it.`);
   }
+  updateStats()
   updateImageClasses()
+  remainingCount = gameLength - answeredCount
+  completeEl.flexGrow = results.length
+  incompleteEl.flexGrow = remainingCount
+
 }
 
 function updateImageClasses() {
@@ -247,12 +265,21 @@ function updateImageClasses() {
     (el) => el.classList.contains('current')
     )
   const currentImage = imageCards[currentImageIndex]
-  const nextImage = imageCards[currentImageIndex + 1]
-  const nextNextImage = imageCards[currentImageIndex + 2]
-  nextImage.classList.add('current')
-  nextImage.classList.remove('next')
-  nextNextImage.classList.add('next')
-  currentImage.classList.remove('current')
-  addTouchToCurrentImageCard()
-  updateAnswerOptions(currentImageIndex + 1)
+  if (currentImageIndex + 1 <= imageCards.length) {
+    currentImage.classList.remove('current')
+    Hammer(currentImage).off('swipeleft swiperight')
+  }
+  if(currentImageIndex + 1 < imageCards.length) {
+    const nextImage = imageCards[currentImageIndex + 1]
+    nextImage.classList.add('current')
+    nextImage.classList.remove('next')
+    addTouchToCurrentImageCard()
+    updateAnswerOptions(currentImageIndex + 1)
+  }
+  if (currentImageIndex + 2 < imageCards.length) {
+    const nextNextImage = imageCards[currentImageIndex + 2]
+    nextNextImage.classList.add('next')
+  }
+  // } else {
+  //   console.log(`No more image cards!`);
 }
