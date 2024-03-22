@@ -292,6 +292,7 @@ body {
   transform: scale(.85);
   top: -8%;
   z-index: 80;
+  transition: all .5s ease-in-out;
 
   & img {
     background-color: lightgray;
@@ -317,11 +318,17 @@ body {
   }
 
   &.answered-a {
-    animation: swipe-left .5s ease-in-out both
+    animation: swipe-left .5s ease-in-out both;
+    transform: scale(1);
+    top: 0;
+    z-index: 105;
   }
 
   &.answered-b {
-    animation: swipe-right .5s ease-in-out both
+    animation: swipe-right .5s ease-in-out both;
+    transform: scale(1);
+    top: 0;
+    z-index: 105;
   }
 }
 
