@@ -119,14 +119,8 @@ function render(click) {
   hideLanding()
   getLevelImages()
   buildImageCards()
-  //   // These element assignments should instead be handed via buildImageCards
-  //   imageEl.src = JSONData[currentImageIndex].url 
-  //   imageCreditEl.innerHTML = JSONData[currentImageIndex].credit
-  // // updateAnswerOptions() // Draft
-  //   // These element assigments should instad be handled via updateAnswerOptions
-  //   answerAEl.textContent = JSONData[currentImageIndex].correct
-  //   answerBEl.textContent = JSONData[currentImageIndex].incorrects[0]
-  // addTouchToCurrentImageCard()
+  updateAnswerOptions(0)
+  addTouchToCurrentImageCard()
   showGame()
   startGame()
 }
@@ -173,13 +167,28 @@ function buildImageCards() {
   nextImageCard.classList.add('next')
 }
 
-function updateAnswerOptions() {
-  // use the index of the levels array
+function updateAnswerOptions(imageIndex) {
+  const currentImageCard = images[imageIndex]
+  const correctAnswer = currentImageCard.correct
+  const incorrectAnswer = currentImageCard.incorrects[0]
+  const answers = [correctAnswer, incorrectAnswer]
+  answers.sort(() => Math.random() - 0.5)
+  answerAEl.textContent = answers[0]
+  answerBEl.textContent = answers[1]
 }
 
 function addTouchToCurrentImageCard() {
-  currentImageEl = document.querySelector('.image-card, .current')
+  const currentImageIndex = imageCards.findIndex( 
+    (el) => el.classList.contains('current')
+    )
+  console.log(`imageCards[${currentImageIndex}]:`)
+  console.log(currentImageIndex)
+  currentImageEl = imageCards[currentImageIndex]
+  console.log(`currentImageEl:`);
+  console.log(currentImageEl);
   imageTouchEl = Hammer(currentImageEl)
+  console.log(`imageTouchEl:`)
+  console.log(imageTouchEl)
   imageTouchEl.on('swipeleft swiperight', answerHandler)
 }
 
@@ -244,28 +253,6 @@ function updateImageClasses() {
   nextImage.classList.remove('next')
   nextNextImage.classList.add('next')
   currentImage.classList.remove('current')
-}
-
-/*-------------------------------- Helper functions  --------------------------------*/
-
-
-/*-------------------------------- Temp functions for testing --------------------------------*/
-
-function demoInConsole() {
-  seedProgress()
-  startTimer()
-  logVariables()
-}
-
-function seedProgress(params) {
-  results.push(1,0,1,0,1,0,1)
-}
-
-function logVariables() {
-  updateStats()
-  console.log(`results: ${results}`);
-  console.log(`answeredCount: ${answeredCount}`);
-  console.log(`progress: ${progress}`);
-  console.log(`score: ${score}`);
-  console.log(`accuracy: ${accuracy}`);
+  addTouchToCurrentImageCard()
+  updateAnswerOptions(currentImageIndex + 1)
 }
