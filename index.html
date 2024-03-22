@@ -12,8 +12,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,87.5,100..900;1,87.5,100..900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/css/style.css" rel="stylesheet">
   </link>
 
 </head>
@@ -47,25 +49,27 @@
       <div class="choose">
         <h3>Choose your level:</h3>
       </div>
-    <div class="levels">
-      <div class="easy">
-        <button class="easy-btn focus" id="0"></button>
+      <div class="levels">
+        <div class="easy">
+          <button class="easy-btn focus" id="0"></button>
+        </div>
+        <div class="medium">
+          <button class="med-btn focus" id="1"></button>
+        </div>
+        <div class="hard">
+          <button class="hard-btn focus" id="2"></button>
+        </div>
       </div>
-      <div class="medium">
-        <button class="med-btn focus" id="1"></button>
-      </div>
-      <div class="hard">
-        <button class="hard-btn focus" id="2"></button>
-      </div>
-    </div>
-    <div class="date"></div>
+      <div class="date"></div>
     </div>
   </div>
   <div class="game-parent display-none">
     <div class="game">
       <div class="game-header">
         <div class="back"></div>
-        <div class="logo"><h2>Spot On</h2></div>
+        <div class="logo">
+          <h2>Spot On</h2>
+        </div>
         <div class="menu"></div>
       </div>
       <div class="game-area">
@@ -83,7 +87,7 @@
         </div>
         <div id="answer-a" class="choice">TBD</div>
         <div id="answer-b" class="choice">TBD</div>
-        <div class="images">
+        <div id="image-cards" class="image-cards">
           <div class="image-card current">
             <img class="image" src="">
             <div class="credit"></div>
@@ -96,6 +100,7 @@
             <img class="image" src="">
             <div class="credit"></div>
           </div>
+        </div>
       </div>
     </div>
   </div>

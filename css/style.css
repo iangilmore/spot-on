@@ -72,8 +72,10 @@ body {
   }
 }
 
-.landing-parent, .game-parent, .results-parent {
-/* .landing-parent{ */
+.landing-parent,
+.game-parent,
+.results-parent {
+  /* .landing-parent{ */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,6 +111,7 @@ body {
 .logo {
   grid-area: logo;
   align-self: end;
+
   & h1 {
     font-size: 3em;
     margin-bottom: 0;
@@ -118,6 +121,7 @@ body {
 .tagline {
   align-self: start;
   grid-area: tagline;
+
   & h2 {
     font-weight: 400;
     margin-top: 0;
@@ -127,6 +131,7 @@ body {
 .choose {
   align-self: end;
   grid-area: choose;
+
   h3 {
     font-weight: 400;
     margin-bottom: 0;
@@ -205,7 +210,7 @@ body {
     "timer timer"
     "stats stats"
     "answer-a answer-b"
-    "images images";
+    "image-cards image-cards";
   grid-area: game-area;
 }
 
@@ -234,20 +239,24 @@ body {
   display: flex;
   width: 100%;
   height: 32px;
+
   & #complete {
     flex-grow: 0;
     background-color: var(--orange);
     color: whitesmoke
   }
+
   & #incomplete {
     flex-grow: 1;
     background-color: var(--light);
     color: #2B2B2B
   }
+
   & div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     & p {
       padding: 4px;
     }
@@ -266,18 +275,14 @@ body {
   font-size: clamp(20px, 4.5vmin, 24px);
 }
 
-.images {
-  align-self: start; 
-  grid-area: images;
+.image-cards {
+  align-self: start;
+  grid-area: image-cards;
   position: relative;
   width: 100%;
   /* height: 0; */
   padding-top: calc(100% * (4 / 3));
 }
-
-/* .images {
-
-} */
 
 .image-card {
   position: absolute;
@@ -287,20 +292,34 @@ body {
   transform: scale(.85);
   top: -8%;
   z-index: 80;
-  & img {  background-color: lightgray;};
+
+  & img {
+    background-color: lightgray;
+  }
+
+  ;
+
   &.current {
     transform: scale(1);
     top: 0;
     z-index: 100;
   }
+
   &.next {
     transform: scale(.9);
     z-index: 99;
-    & img {  background-color: red;};
+
+    & img {
+      background-color: red;
+    }
+
+    ;
   }
+
   &.answered-a {
     animation: swipe-left .5s ease-in-out both
   }
+
   &.answered-b {
     animation: swipe-right .5s ease-in-out both
   }
@@ -311,7 +330,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -323,10 +342,11 @@ body {
   text-align: right;
   color: var(--light);
   padding: 48px 8px 8px 8px;
-  background: linear-gradient(#00000000,#000000);
+  background: linear-gradient(#00000000, #000000);
   pointer-events: none;
   cursor: default;
   border-radius: 0 0 8px 8px;
+
   & a {
     color: inherit;
     text-decoration: none;
@@ -377,23 +397,57 @@ button {
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; display: none; }
-  100% { opacity: 1; display: initial; }
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: initial;
+  }
 }
 
 @keyframes fade-out {
-  0% { opacity: 1; display: initial; }
-  100% { opacity: 0; display: none; }
+  0% {
+    opacity: 1;
+    display: initial;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 
 @keyframes swipe-left {
- 0% {transform: translateX(0);}
- 90% {transform: translateX(-150%);opacity: .9;}
- 100% {transform: translateX(-150%);opacity: 0;}
+  0% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(-150%);
+    opacity: .9;
+  }
+
+  100% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
 }
 
 @keyframes swipe-right {
-  0% {transform: translateX(0);}
-  90% {transform: translateX(+150%);opacity: .9;}
-  100% {transform: translateX(+150%);opacity: 0;}
- }
+  0% {
+    transform: translateX(0);
+  }
+
+  90% {
+    transform: translateX(+150%);
+    opacity: .9;
+  }
+
+  100% {
+    transform: translateX(+150%);
+    opacity: 0;
+  }
+}
