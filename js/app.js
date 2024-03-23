@@ -155,6 +155,7 @@ function buildImageCards() {
       imageCard.classList.add('image-card')
       const imageElement = document.createElement('img')
       imageElement.classList.add('image')
+      imageElement.setAttribute('draggable',false)
       imageElement.src = image.url
       const creditDiv = document.createElement('div')
       creditDiv.classList.add('credit')
@@ -172,8 +173,6 @@ function buildImageCards() {
   let nextImageCard = imageCards[1]
   nextImageCard.classList.add('next')
 }
-
-
 
 function updateAnswerOptions(imageIndex) {
   currentImageCard = images[imageIndex]
