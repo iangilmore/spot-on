@@ -358,7 +358,6 @@ body {
   object-fit: cover;
   border-radius: 8px;
   user-select: none;
-  user-drag: none;
 }
 
 .image-card .credit {
