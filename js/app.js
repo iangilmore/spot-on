@@ -256,7 +256,9 @@ function answerHandler(event) {
   remainingCount = gameLength - answeredCount
   completeEl.flexGrow = results.length
   incompleteEl.flexGrow = remainingCount
-
+  if (answeredCount == gameLength) {
+    totalCountEl.textContent = ""
+  }
 }
 
 function updateImageClasses() {

@@ -243,13 +243,15 @@ body {
   & #complete {
     flex-grow: 0;
     background-color: var(--orange);
-    color: whitesmoke
+    color: var(--light);
+    transition: all .5s ease-in-out;
   }
 
   & #incomplete {
     flex-grow: 1;
     background-color: var(--light);
-    color: #2B2B2B
+    color: var(--dark);
+    transition: all .5s ease-in-out;
   }
 
   & div {
@@ -265,10 +267,44 @@ body {
 
 .answer-a {
   grid-area: answer-a;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 16px;
+  width: 100%;
+  height: 60%;
+  /* background-color: var(--red); */
+  &::before {
+    content: " ";
+    border-left: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    display: inline-block;
+  }
 }
+
+
 
 .answer-b {
   grid-area: answer-b;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 16px;
+  width: 100%;
+  height: 60%;
+  /* background-color: var(--red); */
+  &::after {
+    content: " ";
+    border-right: 2px solid var(--dark);
+    border-top: 2px solid var(--dark);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    display: inline-block;
+  }
 }
 
 .choice {
@@ -280,8 +316,8 @@ body {
   grid-area: image-cards;
   position: relative;
   width: 100%;
-  /* height: 0; */
-  padding-top: calc(100% * (4 / 3));
+  height: 100%;
+  /* padding-top: calc(100% * (4 / 3)); */
 }
 
 .image-card {
@@ -290,46 +326,30 @@ body {
   height: 0;
   padding-top: calc(100% * (4 / 3));
   transform: scale(.85);
-  top: -8%;
+  top: -4%;
   z-index: 80;
   transition: all .5s ease-in-out;
-
-  & img {
-    background-color: lightgray;
-  }
-
-  ;
-
   &.current {
     transform: scale(1);
-    top: 0;
+    top: 4%;
     z-index: 100;
-  }
-
+  };
   &.next {
     transform: scale(.9);
     z-index: 99;
-
-    & img {
-      background-color: red;
-    }
-
-    ;
-  }
-
+  };
   &.answered-a {
     animation: swipe-left .5s ease-in-out both;
     transform: scale(1);
     top: 0;
     z-index: 105;
-  }
-
+  };
   &.answered-b {
     animation: swipe-right .5s ease-in-out both;
     transform: scale(1);
     top: 0;
     z-index: 105;
-  }
+  };
 }
 
 .image {
@@ -339,6 +359,8 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  user-select: none;
+  user-drag: none;
 }
 
 .image-card .credit {
@@ -348,8 +370,8 @@ body {
   font-size: .6rem;
   text-align: right;
   color: var(--light);
-  padding: 48px 8px 8px 8px;
-  background: linear-gradient(#00000000, #000000);
+  padding: 64px 8px 8px 8px;
+  background: linear-gradient(#00000000, #00000090);
   pointer-events: none;
   cursor: default;
   border-radius: 0 0 8px 8px;
