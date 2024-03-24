@@ -322,7 +322,7 @@ function finishGame() {
   stopTimer()
   emojiResults()
   shareResults = {
-    text: `Spot On ${levels[chosenLevel].name} #1 \\n⏱️ ${playTimeDisplay} \\n${resultsInEmojiString}`
+    text: `Spot On #1\n⏱️ Finished ${levels[chosenLevel].name} in ${playTimeDisplay}\n${resultsInEmojiString}`
   }
   showResults()
 }
