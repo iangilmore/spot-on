@@ -30,24 +30,16 @@
 </head>
 
 <body>
-  <div class="landing-parent">
+  <!-- <div id="leave-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Sure you want to leave?</h2>
+      <button class="keep-playing-btn">Keep Playing</button>
+      <button class="leave-btn">I'm Outta Here</button>
+    </div>
+  </div> -->
+  <div class="landing-parent fade-in-1s">
     <div class="landing">
       <header class="header">
-        <!-- <a href="#" class="menuBtn"><span></span></a>
-          <nav class="menu">
-            <ul>
-              <li>
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              </li>
-            </ul>
-          </nav> -->
       </header>
       <div class="logo">
         <img src="img/logo-main.png" alt="Spot On Logo" class="logo-main">
@@ -72,14 +64,14 @@
       <div class="date"></div>
     </div>
   </div>
-  <div class="game-parent display-none">
+  <div class="game-parent fade-out-1s display-none">
     <div class="game">
       <div class="game-header">
-        <div class="back"></div>
+        <div class="back-btn">Back</div>
         <div class="logo">
           <img src="img/logo-small.png" alt="Spot On Logo" class="logo-small">
         </div>
-        <div class="menu"></div>
+        <div class="menu">...</div>
       </div>
       <div class="game-area">
         <div class="level"></div>
@@ -102,6 +94,26 @@
     </div>
   </div>
   <div class="results-parent display-none">
+    <div class="results">
+      <div class="results-header">
+        <div class="logo">
+          <img src="img/logo-small.png" alt="Spot On Logo" class="logo-small">
+        </div>
+      </div>
+      <div class="results-area">
+        <div class="message"><h1>You finished!</h1></div>
+        <div class="final-stats"><h2>You completed Newb in 1:39 with 92% accuracy.</h2></div>
+        <div class="details"></div>
+        <div class="options">
+          <div class="share">
+            <button class="share-btn">Share my results</button>
+          </div>
+          <div class="play-another">
+            <button id="landing-btn">Play another level</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
