@@ -347,9 +347,9 @@ function showResults() {
 function emojiResults() {
   results.forEach(result => {
     if (result == 1) {
-      resultsInEmoji.push("🟢")
+      resultsInEmoji.push('✅')
     } else if (result == 0) {
-      resultsInEmoji.push("🔴")
+      resultsInEmoji.push('❌')
     } else {console.log(`Result value didn't match 1 or 0`)}
   })
   emojiResultsToString()
