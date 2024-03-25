@@ -57,15 +57,14 @@ let answerB
 let shareResults = {}
 
 /*------------------------ Cached Element References ------------------------*/
-/* Landing */
+
+const bodyEl = document.querySelector('body')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
 const dateEl = document.querySelector('.date')
 const easyBtn = document.querySelector('.easy-btn')
 const medBtn = document.querySelector('.med-btn')
 const hardBtn = document.querySelector('.hard-btn')
-
-/* Game */
 const gameParentEl = document.querySelector('.game-parent')
 const gameEl = document.querySelector('.game')
 const levelEl = document.querySelector('.level')
@@ -81,8 +80,6 @@ const imageCardsContainer = document.querySelector('#image-cards')
 const imageEl = document.querySelector('.image')
 const imageCreditEl = document.querySelector('.credit')
 const backBtn = document.querySelector(".back-btn");
-
-/* Results */
 const resultsParentEl = document.querySelector('.results-parent')
 const finalStatsEl = document.querySelector('.final-stats')
 const detailsEl = document.querySelector('.details')
@@ -285,20 +282,26 @@ function answerHandler(event) {
   if (event.type === 'swipeleft') {
     currentImageEl.classList.add('answered-a')
     if (answerA == correctAnswer) {
+      bodyEl.classList.add('correct')
       results.push(1)
+      setTimeout(() => bodyEl.classList.remove('correct'),300)
     } else if (answerA == incorrectAnswer) {
+      bodyEl.classList.add('incorrect')
       results.push(0)
-    } else { console.log(`wha?`); }
+      setTimeout(() => bodyEl.classList.remove('incorrect'),300)
+    } else { }
   } else if (event.type === 'swiperight') {
     currentImageEl.classList.add('answered-b')
     if (answerB == correctAnswer) {
+      bodyEl.classList.add('correct')
       results.push(1)
+      setTimeout(() => bodyEl.classList.remove('correct'),300)
     } else if (answerB == incorrectAnswer) {
+      bodyEl.classList.add('incorrect')
       results.push(0)
-    } else { console.log(`wha?`); }
-  } else {
-    console.log(`This else logic shouldn't ever be possible, fix it.`);
-  }
+      setTimeout(() => bodyEl.classList.remove('incorrect'),300)
+    } else { }
+  } else { }
   updateStats()
   updateImageClasses()
   completeEl.flexGrow = results.length
@@ -324,7 +327,7 @@ function updateImageClasses() {
     addTouchToCurrentImageCard()
     updateAnswerOptions(currentImageIndex + 1)
   } else {
-    finishGame()
+    setTimeout(() => finishGame(),500)
   }
   if (currentImageIndex + 2 < imageCards.length) {
     const nextNextImage = imageCards[currentImageIndex + 2]

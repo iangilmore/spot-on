@@ -3,6 +3,8 @@
   --dark: #333;
   --bright: #B15D44;
   --darkish: #819D95;
+  --green: #54A378;
+  --red: #AA4A44;
 
   --shadow-color: 0deg 0% 9%;
   --shadow-layered:
@@ -484,6 +486,14 @@ button {
   animation: fade-out .5s linear forwards;
 }
 
+.correct {
+  animation: correct .25s ease-in-out;
+}
+
+.incorrect {
+  animation: incorrect .25s ease-in-out;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -538,4 +548,16 @@ button {
     transform: translateX(+150%);
     opacity: 0;
   }
+}
+
+@keyframes correct {
+  0% {background-color: var(--dark);}
+  50% {background-color: var(--green);}
+  100% {background-color: var(--dark);}
+}
+
+@keyframes incorrect {
+  0% {background-color: var(--dark);}
+  50% {background-color: var(--red);}
+  100% {background-color: var(--dark);}
 }
