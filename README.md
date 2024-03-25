@@ -5,7 +5,7 @@
 </h2>
 
 <p align="center">
-Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos toward the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficuly levels.
+Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos toward the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficulty levels.
 </p>
   
 ![Netlify Status](https://api.netlify.com/api/v1/badges/758a970c-1e09-40ab-ac0e-1ec525300c94/deploy-status)  
