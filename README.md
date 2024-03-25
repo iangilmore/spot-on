@@ -67,6 +67,7 @@ To play, simply select your preferred level then start swiping each image toward
 - [Noto Typeface](https://fonts.google.com/noto) - World script by Monotype for Google
 - [Unsplash](https://unsplash.com/) - Beautiful Photography
 - [Google Gemini](https://gemini.google.com/) - Logo creation
+- [RealFaviconGenerator](https://realfavicongenerator.net/) - Website Favicon
 - [Whimsical](https://whimsical.com/) - Wireframing
 
 
