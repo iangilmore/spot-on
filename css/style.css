@@ -487,11 +487,11 @@ button {
 }
 
 .correct {
-  animation: correct .25s ease-in-out;
+  animation: correct .5s ease-in-out;
 }
 
 .incorrect {
-  animation: incorrect .25s ease-in-out;
+  animation: incorrect .5s ease-in-out;
 }
 
 @keyframes fade-in {
