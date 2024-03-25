@@ -1,14 +1,18 @@
-<img src="img/logo-main.png" style="display: block; margin: 0 auto; width: 200px">
+<h1 align="center">
+  <img src="img/logo-main.png" width="200" alt="Spot On">
+  <br><br>
+  <em>Think Fast</em>
+</h1>
 
-## About
+<p align="center">
+Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos toward the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficuly levels.
+</p>
 
-Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos in the direction of the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficuly levels.
+## Screenshots
 
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
+<p align="center">
+<img src="https://github.com/iangilmore/spot-on/assets/6451468/efd269e9-c3c6-4690-bad8-70a9ca5e0af8" width="1024">
+</p>
 
 ## Getting Started
 
@@ -16,26 +20,31 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 
 ## Concept Wireframes
 
+<p align="center">
 <img src="https://github.com/iangilmore/spot-on/assets/6451468/0db344b1-0d83-4354-8893-3051be4a58b7" width="1024">
-
-## MVP Screenshots
-
-<img src="https://github.com/iangilmore/spot-on/assets/6451468/efd269e9-c3c6-4690-bad8-70a9ca5e0af8" width="1024">
+</p>
 
 ## Timeline
 
-| Day   | MVP Items                                                                  | Goal Met | Notes                     |
-|-------|----------------------------------------------------------------------------|----------|---------------------------|
-| Day 1 | Single tap to start game. Initial logic & functionality.                   | Y        |                           |
-| Day 2 | Keep track of progress during game play. Overall functionality.            | Y        |                           |
-| Day 3 | Easily swipe/toss photos left & right. More overall functinality & logic.  | N        | Ran into blocks writing this functionality myself a good chunk of the day, the next day I pulled in a lightweight library instead.|
-| Day 4 | Implement touch on phone, mock touch on desktop. Start restuls screen.     | Y        |                           |
-| Day 5 | Share results. Add logo. Finalize theme.                                   | Y        |                           |
-| Day 6 | Add answer feedback. Add final images. Fine tune animations. MVP Complete! | Y        |                           |
-|       |                                                                            |          |                           |
+| Day | MVP Items                                                                  | Goal Met | Notes                     |
+|-----|----------------------------------------------------------------------------|----------|---------------------------|
+| 1   | Single tap to start game. Initial logic & functionality.                   | Y        |                           |
+| 2   | Keep track of progress during game play. Overall functionality.            | Y        |                           |
+| 3   | Easily swipe/toss photos left & right. More overall functinality & logic.  | N        | Ran into scope limitations writing this functionality myself, the next day I pulled in a lightweight library instead.|
+| 4   | Implement touch on phone, mock touch on desktop. Start restuls screen.     | Y        |                           |
+| 5   | Share results. Add logo. Finalize theme.                                   | Y        |                           |
+| 6   | Add answer feedback. Add final images. Fine tune animations. MVP Complete! | Y        |                           |
+|     |                                                                            |          |                           |
 
 
-#### Attributions
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+
+## Attributions
 
 - [Hammer.js](https://hammerjs.github.io/) - Lightweight multi-touch library
 - [Normalize.css](https://necolas.github.io/normalize.css/) - CSS reset stylesheet
@@ -44,7 +53,7 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 - [Google Gemini](https://gemini.google.com/) - Logo creation
 - [Whimsical](https://whimsical.com/) - Wireframing
 
-#### Next Steps
+## Next Steps
 
 - Add a simple "how to play" guide and/or improve first run UX to hint at how to answer.
 - Add a "review details" screen where a player can review what they got right/wrong, perhaps provide links to learn more about each image/topic.
