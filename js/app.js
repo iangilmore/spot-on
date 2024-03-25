@@ -31,8 +31,8 @@ let playTimeSeconds
 let playTimeDisplay
 let results = []
 let resultsInEmoji = []
-let resultsInEmojiString = ""
-let resultsInEmojiHTML = ""
+let resultsInEmojiString = ''
+let resultsInEmojiHTML = ''
 let answeredCount = 0
 let remainingCount
 let progress
@@ -79,11 +79,11 @@ const answerBEl = document.querySelector('#answer-b')
 const imageCardsContainer = document.querySelector('#image-cards')
 const imageEl = document.querySelector('.image')
 const imageCreditEl = document.querySelector('.credit')
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector('.back-btn')
 const resultsParentEl = document.querySelector('.results-parent')
 const finalStatsEl = document.querySelector('.final-stats')
 const detailsEl = document.querySelector('.details')
-const shareBtn = document.querySelector('.share-btn');
+const shareBtn = document.querySelector('.share-btn')
 const playAnotherBtn = document.querySelector('.play-another')
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -97,9 +97,9 @@ shareBtn.addEventListener('click', async () => {
   try {
     await navigator.share(shareResults)
   } catch (err) {
-    ""
+    ''
   }
-});
+})
 playAnotherBtn.addEventListener('click', backToLanding)
 /*-------------------------------- Functions --------------------------------*/
 
@@ -118,10 +118,9 @@ function handleData(params) {
     .then(response => response.json())
     .then(data => {
       JSONData = data
-      // render()
     })
     .catch(error => {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error)
     })
 }
 
@@ -136,7 +135,7 @@ function render(click) {
   playTimeDisplay = '0:00'
   results = []
   resultsInEmoji = []
-  resultsInEmojiString = ""
+  resultsInEmojiString = ''
   updateStats()
   hideLanding()
   getLevelImages()
@@ -149,18 +148,18 @@ function render(click) {
 
 function hideLanding() {
   landingParentEl.classList.add('fade-out')
-  landingParentEl.classList.remove('fade-in');
+  landingParentEl.classList.remove('fade-in')
 
 }
 
 function showLanding() {
-  landingParentEl.classList.remove('fade-out');
-  landingParentEl.classList.add('fade-in');
+  landingParentEl.classList.remove('fade-out')
+  landingParentEl.classList.add('fade-in')
 }
 
 function hideGame() {
-  gameParentEl.classList.remove('fade-in');
-  gameParentEl.classList.add('fade-out');
+  gameParentEl.classList.remove('fade-in')
+  gameParentEl.classList.add('fade-out')
 }
 
 function showGame() {
@@ -307,7 +306,7 @@ function answerHandler(event) {
   completeEl.flexGrow = results.length
   incompleteEl.flexGrow = remainingCount
   if (answeredCount == gameLength) {
-    totalCountEl.textContent = ""
+    totalCountEl.textContent = ''
   }
 }
 
@@ -325,7 +324,7 @@ function updateImageClasses() {
     nextImage.classList.add('current')
     nextImage.classList.remove('next')
     addTouchToCurrentImageCard()
-    setTimeout(() => updateAnswerOptions(currentImageIndex + 1), 250);
+    setTimeout(() => updateAnswerOptions(currentImageIndex + 1), 250)
   } else {
     setTimeout(() => finishGame(), 500)
   }
@@ -361,9 +360,9 @@ function emojiResults() {
 function emojiResultsToString() {
   for (let i = 0; i < resultsInEmoji.length; i += 5) {
     let emojiGroup = resultsInEmoji.slice(i, i + 5).join('')
-    resultsInEmojiString += emojiGroup + (i + 5 < resultsInEmoji.length ? "\n" : '')
+    resultsInEmojiString += emojiGroup + (i + 5 < resultsInEmoji.length ? '\n' : '')
   }
-  resultsInEmojiHTML = resultsInEmojiString.replace(/\n/g, "<br>")
+  resultsInEmojiHTML = resultsInEmojiString.replace(/\n/g, '<br>')
 }
 
 function renderResults() {
@@ -374,7 +373,7 @@ function renderResults() {
 }
 
 function removeImageCards() {
-  document.querySelectorAll('.image-card').forEach(imageCard => imageCard.remove());
+  document.querySelectorAll('.image-card').forEach(imageCard => imageCard.remove())
 }
 
 function backToLanding() {
