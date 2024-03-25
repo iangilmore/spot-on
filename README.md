@@ -54,7 +54,6 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 - HTML
 - CSS
 - JavaScript
-- 
 
 ## Attributions
 
