@@ -340,7 +340,7 @@ function finishGame() {
   emojiResults()
   renderResults()
   shareResults = {
-    text: `Spot On #1\n⏱️ Completed ${levels[chosenLevel].name} in ${playTimeDisplay}\n${resultsInEmojiString}`
+    text: `Spot On #1\n${levels[chosenLevel].name} completed in ${playTimeDisplay}\n${resultsInEmojiString}`
   }
   hideGame()
   showResults()
