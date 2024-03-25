@@ -1,8 +1,7 @@
-<h1 align="center">
+<h2 align="center">
   <img src="img/logo-main.png" width="200" alt="Spot On">
-  <br><br>
   <em>Think Fast</em>
-</h1>
+</h2>
 
 <p align="center">
 Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos toward the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficuly levels.
