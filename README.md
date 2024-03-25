@@ -24,6 +24,18 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 <img src="https://github.com/iangilmore/spot-on/assets/6451468/0db344b1-0d83-4354-8893-3051be4a58b7" width="1024">
 </p>
 
+
+## MVP User Stories
+
+- As a player, I want to land on the game's page and quickly be able to start the game in one tap/click.
+- As a player, I want to be able to easily swipe/toss the photo left or right depending on which answer I think is correct.
+- As a player on a non-touch-based device, I want to have fun playing the game even when touch isn't possible, with the ease/difficuly being the same touch-based players.
+- As a player, I want to get positive feedback when I get an answer correct and negative yet playful feedback when incorrect.
+- As a player, I want to keep track of my progress/score while I play.
+- As a player, I want to see my results at the end of the game.
+- As a player, I want to share my results to friends, etc.
+
+
 ## Timeline
 
 | Day | MVP Items                                                                  | Goal Met | Notes                     |
@@ -42,7 +54,7 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 - HTML
 - CSS
 - JavaScript
-
+- 
 
 ## Attributions
 
@@ -52,6 +64,7 @@ You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/)
 - [Unsplash](https://unsplash.com/) - Beautiful Photography
 - [Google Gemini](https://gemini.google.com/) - Logo creation
 - [Whimsical](https://whimsical.com/) - Wireframing
+
 
 ## Next Steps
 
