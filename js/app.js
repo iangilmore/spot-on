@@ -96,8 +96,8 @@ backBtn.addEventListener('click', leave)
 shareBtn.addEventListener('click', async () => {
   try {
     await navigator.share(shareResults)
-  } catch (err) { 
-    "" 
+  } catch (err) {
+    ""
   }
 });
 playAnotherBtn.addEventListener('click', backToLanding)
@@ -284,22 +284,22 @@ function answerHandler(event) {
     if (answerA == correctAnswer) {
       bodyEl.classList.add('correct')
       results.push(1)
-      setTimeout(() => bodyEl.classList.remove('correct'),300)
+      setTimeout(() => bodyEl.classList.remove('correct'), 300)
     } else if (answerA == incorrectAnswer) {
       bodyEl.classList.add('incorrect')
       results.push(0)
-      setTimeout(() => bodyEl.classList.remove('incorrect'),300)
+      setTimeout(() => bodyEl.classList.remove('incorrect'), 300)
     } else { }
   } else if (event.type === 'swiperight') {
     currentImageEl.classList.add('answered-b')
     if (answerB == correctAnswer) {
       bodyEl.classList.add('correct')
       results.push(1)
-      setTimeout(() => bodyEl.classList.remove('correct'),300)
+      setTimeout(() => bodyEl.classList.remove('correct'), 300)
     } else if (answerB == incorrectAnswer) {
       bodyEl.classList.add('incorrect')
       results.push(0)
-      setTimeout(() => bodyEl.classList.remove('incorrect'),300)
+      setTimeout(() => bodyEl.classList.remove('incorrect'), 300)
     } else { }
   } else { }
   updateStats()
@@ -327,7 +327,7 @@ function updateImageClasses() {
     addTouchToCurrentImageCard()
     setTimeout(() => updateAnswerOptions(currentImageIndex + 1), 250);
   } else {
-    setTimeout(() => finishGame(),500)
+    setTimeout(() => finishGame(), 500)
   }
   if (currentImageIndex + 2 < imageCards.length) {
     const nextNextImage = imageCards[currentImageIndex + 2]
@@ -353,7 +353,7 @@ function emojiResults() {
       resultsInEmoji.push('✅')
     } else if (result == 0) {
       resultsInEmoji.push('❌')
-    } else {}
+    } else { }
   })
   emojiResultsToString()
 }

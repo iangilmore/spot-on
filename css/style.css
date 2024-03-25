@@ -3,16 +3,18 @@
   --dark: #333;
   --bright: #B15D44;
   --darkish: #819D95;
-  --green: #54A378;
-  --red: #AA4A44;
+  --green: #54A37880;
+  --red: #AA4A4480;
 
   --shadow-color: 0deg 0% 9%;
   --shadow-layered:
-  0px 1px 1.5px hsl(var(--shadow-color) / 0),
-  0px 3.9px 5.9px hsl(var(--shadow-color) / 0.12),
-  0px 6.9px 10.4px hsl(var(--shadow-color) / 0.23),
-  0px 11.6px 17.4px hsl(var(--shadow-color) / 0.35),
-  0.1px 19.9px 29.9px hsl(var(--shadow-color) / 0.46);
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0px 3.9px 5.9px hsl(var(--shadow-color) / 0.12),
+    0px 6.9px 10.4px hsl(var(--shadow-color) / 0.23),
+    0px 11.6px 17.4px hsl(var(--shadow-color) / 0.35),
+    0.1px 19.9px 29.9px hsl(var(--shadow-color) / 0.46);
+
+    background: var(--dark);
 }
 
 html {
@@ -39,7 +41,9 @@ body {
   overflow-clip-margin: 0px;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-weight: 400;
   margin: 0;
 }
@@ -49,7 +53,7 @@ h2, h3, h4 {
 }
 
 .logo-main {
-  width: clamp(200px,25vmin,256px);
+  width: clamp(200px, 25vmin, 256px);
 }
 
 .logo-small {
@@ -175,7 +179,7 @@ h2, h3, h4 {
   grid-area: game-header;
 }
 
-.back-btn { 
+.back-btn {
   display: flex;
   width: 100px;
   padding-left: 12px;
@@ -297,6 +301,7 @@ h2, h3, h4 {
   position: relative;
   width: 100%;
   height: 100%;
+
   /* padding-top: calc(100% * (4 / 3)); */
   &::after {
     position: absolute;
@@ -309,7 +314,10 @@ h2, h3, h4 {
     right: -14px;
     transform: rotate(45deg);
     display: inline-block;
-  };
+  }
+
+  ;
+
   &::before {
     position: absolute;
     content: " ";
@@ -328,33 +336,46 @@ h2, h3, h4 {
   position: absolute;
   aspect-ratio: 3 / 4;
   height: 100%;
+  border-radius: 8px;
   transform: scale(.75);
   top: -8%;
   z-index: 80;
   transition: all .5s ease-in-out;
   box-shadow: var(--shadow-layered);
+
   &.current {
     transform: scale(.9);
     top: 0;
     z-index: 100;
     /* box-shadow: var(--shadow-layered); */
-  };
+  }
+
+  ;
+
   &.next {
     transform: scale(.8);
     z-index: 99;
-  };
+  }
+
+  ;
+
   &.answered-a {
     animation: swipe-left .5s ease-in-out both;
     transform: scale(.9);
     top: 0;
     z-index: 105;
-  };
+  }
+
+  ;
+
   &.answered-b {
     animation: swipe-right .5s ease-in-out both;
     transform: scale(.9);
     top: 0;
     z-index: 105;
-  };
+  }
+
+  ;
 }
 
 .image {
@@ -386,7 +407,7 @@ h2, h3, h4 {
   }
 }
 
-.results {  
+.results {
   display: grid;
   height: 100dvh;
   max-height: 1024px;
@@ -399,7 +420,7 @@ h2, h3, h4 {
     "results-area";
 }
 
-.results-header { 
+.results-header {
   grid-area: results-header;
   display: flex;
   justify-content: center;
@@ -407,7 +428,7 @@ h2, h3, h4 {
 
 }
 
-.results-area {  
+.results-area {
   grid-area: results-area;
   display: grid;
   max-width: 80vw;
@@ -457,13 +478,17 @@ h2, h3, h4 {
 
 }
 
-.share { grid-area: share; }
+.share {
+  grid-area: share;
+}
 
-.play-another { grid-area: play-another; }
+.play-another {
+  grid-area: play-another;
+}
 
 button {
   font-size: clamp(20px, 4.5vmin, 24px);
-  width: clamp(128px,50vmin,256px);
+  width: clamp(128px, 50vmin, 256px);
   min-height: 36px;
   padding: 8px;
   margin: 4px;
@@ -551,13 +576,29 @@ button {
 }
 
 @keyframes correct {
-  0% {background-color: var(--dark);}
-  50% {background-color: var(--green);}
-  100% {background-color: var(--dark);}
+  0% {
+    background-color: var(--dark);
+  }
+
+  50% {
+    background-color: var(--green);
+  }
+
+  100% {
+    background-color: var(--dark);
+  }
 }
 
 @keyframes incorrect {
-  0% {background-color: var(--dark);}
-  50% {background-color: var(--red);}
-  100% {background-color: var(--dark);}
+  0% {
+    background-color: var(--dark);
+  }
+
+  50% {
+    background-color: var(--red);
+  }
+
+  100% {
+    background-color: var(--dark);
+  }
 }
