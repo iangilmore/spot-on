@@ -8,11 +8,17 @@
 Spot On is a browser-based game where players test their knowledge and quick decision making by swiping photos toward the matching word as quickly as possible. The game provides a fun interaction model and an engaging challenge across three different difficuly levels.
 </p>
 
-## Screenshots
+![Netlify Status](https://api.netlify.com/api/v1/badges/758a970c-1e09-40ab-ac0e-1ec525300c94/deploy-status)
+![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=spot-on-game-ian-gilmore&style=for-the-badge)
 
+<!---
+## Screenshots
+--->
+<!---
 <p align="center">
 <img src="https://github.com/iangilmore/spot-on/assets/6451468/efd269e9-c3c6-4690-bad8-70a9ca5e0af8" width="1024">
 </p>
+--->
 
 ## Getting Started
 
