@@ -32,7 +32,8 @@ let playTimeDisplay
 let results = []
 let resultsInEmoji = []
 let resultsInEmojiString = ""
-let answeredCount
+let resultsInEmojiHTML = ""
+let answeredCount = 0
 let remainingCount
 let progress
 let score
@@ -76,33 +77,33 @@ const incompleteEl = document.querySelector('#incomplete')
 const totalCountEl = document.querySelector('#total-count')
 const answerAEl = document.querySelector('#answer-a')
 const answerBEl = document.querySelector('#answer-b')
+const imageCardsContainer = document.querySelector('#image-cards')
 const imageEl = document.querySelector('.image')
 const imageCreditEl = document.querySelector('.credit')
 const backBtn = document.querySelector(".back-btn");
 
-const shareBtn = document.querySelector(".share-btn");
-
-
 /* Results */
 const resultsParentEl = document.querySelector('.results-parent')
+const finalStatsEl = document.querySelector('.final-stats')
+const detailsEl = document.querySelector('.details')
+const shareBtn = document.querySelector('.share-btn');
+const playAnotherBtn = document.querySelector('.play-another')
+
 /*----------------------------- Event Listeners -----------------------------*/
 easyBtn.addEventListener('click', render)
 medBtn.addEventListener('click', render)
 hardBtn.addEventListener('click', render)
 
 backBtn.addEventListener('click', leave)
-// document.querySelector('.back-btn').addEventListener('click',showModal)
-// document.querySelector(".keep-playing-btn").addEventListener("click", hideModal)
-// document.querySelector(".leave-btn").addEventListener("click", leave)
 
 shareBtn.addEventListener('click', async () => {
   try {
     await navigator.share(shareResults)
   } catch (err) { 
-    console.log(err) 
+    "" 
   }
 });
-
+playAnotherBtn.addEventListener('click', backToLanding)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -112,14 +113,6 @@ function init() {
   easyBtn.textContent = levels[0].name
   medBtn.textContent = levels[1].name
   hardBtn.textContent = levels[2].name
-
-  remainingCount = gameLength - answeredCount
-  score = 0
-  timerEL.textContent = playTimeDisplay
-  completeEl.flexGrow = 0
-  incompleteEl.flexGrow = remainingCount
-  totalCountEl.textContent = gameLength
-
   handleData()
 }
 
@@ -138,12 +131,16 @@ function handleData(params) {
 function render(click) {
   chosenLevel = parseInt(click.target.id)
   levelEl.textContent = levels[chosenLevel].name
+  timerEL.textContent = playTimeDisplay
+  completeEl.flexGrow = 0
+  incompleteEl.flexGrow = remainingCount
+  totalCountEl.textContent = gameLength
   playTimeSeconds = -1
   playTimeDisplay = '0:00'
   results = []
   resultsInEmoji = []
   resultsInEmojiString = ""
-  shareResults = {}
+  updateStats()
   hideLanding()
   getLevelImages()
   buildImageCards()
@@ -154,14 +151,34 @@ function render(click) {
 }
 
 function hideLanding() {
-  landingParentEl.classList.add('fade-out-1s')
+  landingParentEl.classList.add('fade-out')
+  landingParentEl.classList.remove('fade-in');
+
+}
+
+function showLanding() {
+  landingParentEl.classList.remove('fade-out');
+  landingParentEl.classList.add('fade-in');
+}
+
+function hideGame() {
+  gameParentEl.classList.remove('fade-in');
+  gameParentEl.classList.add('fade-out');
 }
 
 function showGame() {
-  landingParentEl.classList.add('display-none')
-  gameParentEl.classList.remove('display-none')
-  gameParentEl.classList.remove('fade-out-1s')
-  gameParentEl.classList.add('fade-in-1s-delayed-1s')
+  gameParentEl.classList.remove('fade-out')
+  gameParentEl.classList.add('fade-in')
+}
+
+function hideResults() {
+  resultsParentEl.classList.add('fade-out')
+  resultsParentEl.classList.remove('fade-in')
+}
+
+function showResults() {
+  resultsParentEl.classList.remove('fade-out')
+  resultsParentEl.classList.add('fade-in')
 }
 
 function startGame() {
@@ -193,11 +210,9 @@ function getLevelImages() {
       count++
     }
   }
-  return images
 }
 
 function buildImageCards() {
-  const imageCardsContainer = document.getElementById('image-cards')
   if (imageCardsContainer) {
     for (const image of images) {
       const imageCard = document.createElement('div')
@@ -224,11 +239,12 @@ function buildImageCards() {
 }
 
 function leave() {
+  hideGame()
+  showLanding()
   stopTimer()
-  landingParentEl.classList.remove("fade-out-1s", "display-none");
-  landingParentEl.classList.add("fade-in-1s");
-  gameParentEl.classList.remove("fade-in-1s-delayed-1s");
-  gameParentEl.classList.add("fade-out-1s", "display-none");
+  removeImageCards()
+  playTimeSeconds = -1
+  playTimeDisplay = '0:00'
 }
 
 function updateAnswerOptions(imageIndex) {
@@ -285,7 +301,6 @@ function answerHandler(event) {
   }
   updateStats()
   updateImageClasses()
-  remainingCount = gameLength - answeredCount
   completeEl.flexGrow = results.length
   incompleteEl.flexGrow = remainingCount
   if (answeredCount == gameLength) {
@@ -309,7 +324,6 @@ function updateImageClasses() {
     addTouchToCurrentImageCard()
     updateAnswerOptions(currentImageIndex + 1)
   } else {
-    console.log("no more cards, finishing game.");
     finishGame()
   }
   if (currentImageIndex + 2 < imageCards.length) {
@@ -321,28 +335,14 @@ function updateImageClasses() {
 function finishGame() {
   stopTimer()
   emojiResults()
+  renderResults()
   shareResults = {
-    text: `Spot On #1\n⏱️ Finished ${levels[chosenLevel].name} in ${playTimeDisplay}\n${resultsInEmojiString}`
+    text: `Spot On #1\n⏱️ Completed ${levels[chosenLevel].name} in ${playTimeDisplay}\n${resultsInEmojiString}`
   }
+  hideGame()
   showResults()
+  removeImageCards()
 }
-
-function showResults() {
-  gameParentEl.classList.add('display-none')
-  gameParentEl.classList.add('fade-out-1s')
-  gameParentEl.classList.remove('fade-in-1s-delayed-1s')
-  resultsParentEl.classList.remove('display-none')
-  resultsParentEl.classList.add('fade-in-1s-delayed-1s')
-}
-
-
-// function showModal() {
-//   document.getElementById("leave-modal").classList.remove("hidden");
-// }
-
-// function hideModal() {
-//   document.getElementById("leave-modal").classList.add("hidden");
-// }
 
 function emojiResults() {
   results.forEach(result => {
@@ -350,7 +350,7 @@ function emojiResults() {
       resultsInEmoji.push('✅')
     } else if (result == 0) {
       resultsInEmoji.push('❌')
-    } else {console.log(`Result value didn't match 1 or 0`)}
+    } else {}
   })
   emojiResultsToString()
 }
@@ -360,5 +360,23 @@ function emojiResultsToString() {
     let emojiGroup = resultsInEmoji.slice(i, i + 5).join('')
     resultsInEmojiString += emojiGroup + (i + 5 < resultsInEmoji.length ? "\n" : '')
   }
-  // return resultsInEmojiString
+  resultsInEmojiHTML = resultsInEmojiString.replace(/\n/g, "<br>")
+}
+
+function renderResults() {
+  finalStatsEl.innerHTML = `
+    <h3>Spot On #1</h3>
+    <p>You Completed ${levels[chosenLevel].name} in ${playTimeDisplay}</p>
+    <h2>${resultsInEmojiHTML}</h2>`
+}
+
+function removeImageCards() {
+  document.querySelectorAll('.image-card').forEach(imageCard => imageCard.remove());
+}
+
+function backToLanding() {
+  hideResults()
+  showLanding()
+  playTimeSeconds = -1
+  playTimeDisplay = '0:00'
 }
