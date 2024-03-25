@@ -22,7 +22,9 @@ Spot On is a browser-based game where players test their knowledge and quick dec
 
 ## Getting Started
 
-You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/) and [Vercel](https://spot-on-game-ian-gilmore.vercel.app/) directly in your mobile or desktop web browser. You can also  clone this repo and run it locally ([VS Code](https://code.visualstudio.com/) + [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension works well). To play, simply select your preferred level then start swiping each image toward the word you think matches it. Good luck!
+You can play Spot On at [Netlify](https://spot-on-game-ian-gilmore.netlify.app/) and [Vercel](https://spot-on-game-ian-gilmore.vercel.app/) directly in your mobile or desktop web browser. You can also  clone this repo and run it locally ([VS Code](https://code.visualstudio.com/) + [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension works well). 
+
+To play, simply select your preferred level then start swiping each image toward the word you think matches it. Good luck!
 
 ## Concept Wireframes
 
