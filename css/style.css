@@ -3,6 +3,14 @@
   --dark: #333;
   --bright: #B15D44;
   --darkish: #819D95;
+
+  --shadow-color: 0deg 0% 9%;
+  --shadow-layered:
+  0px 1px 1.5px hsl(var(--shadow-color) / 0),
+  0px 3.9px 5.9px hsl(var(--shadow-color) / 0.12),
+  0px 6.9px 10.4px hsl(var(--shadow-color) / 0.23),
+  0px 11.6px 17.4px hsl(var(--shadow-color) / 0.35),
+  0.1px 19.9px 29.9px hsl(var(--shadow-color) / 0.46);
 }
 
 html {
@@ -24,38 +32,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
-  overflow: hidden;
+  height: 100dvh;
+  overflow: clip;
+  overflow-clip-margin: 0px;
 }
 
 h2, h3, h4 {
   font-weight: 400;
-  margin-top: 0;
+  margin: 0;
 }
-
-/* .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  /* justify-content: center; */
-  /* align-items: start;
-  z-index: 200;
-  transition: all .5s ease-in-out;
-} */
-
-/* .modal-content {
-  background-color: var(--light);
-  border: 4px solid var(--bright);
-  color: var(--dark);
-  text-align: center;
-  margin: 16px;
-  padding: 20px;
-  border-radius: 10px;
-} */
 
 .hidden {
   display: none;
@@ -80,19 +65,20 @@ h2, h3, h4 {
 .landing-parent,
 .game-parent,
 .results-parent {
-  /* .landing-parent{ */
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100dvh;
+  /* transition: all .5s ease-in-out; */
 }
 
 .landing {
   width: 100vw;
   height: 100dvh;
-  max-height: 768px;
+  max-height: 1024px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px 1fr .5fr .75fr 1.5fr 1fr;
@@ -167,15 +153,14 @@ h2, h3, h4 {
 }
 
 .game {
-  height: 100dvh;
   display: grid;
+  height: 100dvh;
+  /* max-height: 768px; */
   grid-template-columns: 1fr;
   grid-template-rows: 48px 1fr;
   grid-auto-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  /* justify-items: center; */
-  /* justify-content: center; */
   grid-template-areas:
     "game-header"
     "game-area";
@@ -287,15 +272,6 @@ h2, h3, h4 {
   padding-left: 16px;
   width: 100%;
   height: 60%;
-  /* &::before {
-    content: " ";
-    border-left: 2px solid var(--light);
-    border-bottom: 2px solid var(--light);
-    width: 20px;
-    height: 20px;
-    transform: rotate(45deg);
-    display: inline-block;
-  } */
 }
 
 
@@ -308,15 +284,6 @@ h2, h3, h4 {
   padding-right: 16px;
   width: 100%;
   height: 60%;
-  /* &::after {
-    content: " ";
-    border-right: 2px solid var(--light);
-    border-top: 2px solid var(--light);
-    width: 20px;
-    height: 20px;
-    transform: rotate(45deg);
-    display: inline-block;
-  } */
 }
 
 .choice {
@@ -324,8 +291,10 @@ h2, h3, h4 {
 }
 
 .image-cards {
-  align-self: start;
   grid-area: image-cards;
+  display: flex;
+  align-self: start;
+  justify-content: center;
   position: relative;
   width: 100%;
   height: 100%;
@@ -358,31 +327,32 @@ h2, h3, h4 {
 
 .image-card {
   position: absolute;
-  width: 100%;
-  height: 0;
-  padding-top: calc(100% * (4 / 3));
-  transform: scale(.85);
-  top: -4%;
+  aspect-ratio: 3 / 4;
+  height: 100%;
+  transform: scale(.75);
+  top: -8%;
   z-index: 80;
   transition: all .5s ease-in-out;
+  box-shadow: var(--shadow-layered);
   &.current {
-    transform: scale(1);
-    top: 4%;
+    transform: scale(.9);
+    top: 0;
     z-index: 100;
+    /* box-shadow: var(--shadow-layered); */
   };
   &.next {
-    transform: scale(.9);
+    transform: scale(.8);
     z-index: 99;
   };
   &.answered-a {
     animation: swipe-left .5s ease-in-out both;
-    transform: scale(1);
+    transform: scale(.9);
     top: 0;
     z-index: 105;
   };
   &.answered-b {
     animation: swipe-right .5s ease-in-out both;
-    transform: scale(1);
+    transform: scale(.9);
     top: 0;
     z-index: 105;
   };
@@ -418,8 +388,9 @@ h2, h3, h4 {
 }
 
 .results {  
-  height: 100dvh;
   display: grid;
+  height: 100dvh;
+  max-height: 768px;
   grid-template-columns: 1fr;
   grid-template-rows: 48px 1fr;
   gap: 0px 0px;
@@ -438,6 +409,7 @@ h2, h3, h4 {
 }
 
 .results-area {  
+  grid-area: results-area;
   display: grid;
   max-width: 80vw;
   grid-template-columns: 1fr;
@@ -451,39 +423,36 @@ h2, h3, h4 {
     "final-stats"
     "details"
     "options";
-  grid-area: results-area;
 }
 
 .message {
-  align-self: end;
   grid-area: message;
+  align-self: end;
 }
 
 .final-stats {
-  align-self: end;
   grid-area: final-stats;
+  align-self: end;
   text-align: center;
 }
 
 .details {
-  align-self: start;
   grid-area: details;
+  align-self: start;
 }
 
-.options {  display: grid;
+.options {
+  grid-area: options;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 4px 0px;
   grid-auto-flow: row;
-  /* justify-items: stretch; */
-  /* justify-items: center; */
   grid-template-areas:
     "share"
     "play-another"
     ".";
-  grid-area: options;
   align-items: center;
-  /* justify-self: stretch; */
   align-self: stretch;
 
 }
@@ -492,12 +461,12 @@ h2, h3, h4 {
 
 .play-another { grid-area: play-another; }
 
-
 button {
   font-size: clamp(20px, 4.5vmin, 24px);
-  width: 50vmin;
+  width: clamp(128px,50vmin,256px);
   min-height: 36px;
   padding: 8px;
+  margin: 4px;
   border: none;
   border-radius: 4px;
   background-color: var(--bright);
@@ -509,43 +478,35 @@ button {
   opacity: 0;
 }
 
-.fade-in-1s {
-  animation: fade-in 1s linear forwards;
+.fade-in {
+  animation: fade-in .5s linear forwards;
 }
 
-.fade-in-1s-delayed-1s {
-  animation: fade-in 1s linear 1s forwards;
-}
-
-.fade-out-1s {
-  animation: fade-out 1s linear forwards;
-}
-
-.fade-out-1s-delayed-1s {
-  animation: fade-out 1s linear 1s forwards;
+.fade-out {
+  animation: fade-out .5s linear forwards;
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 
   100% {
     opacity: 1;
-    display: initial;
+    visibility: visible;
   }
 }
 
 @keyframes fade-out {
   0% {
     opacity: 1;
-    display: initial;
+    visibility: visible;
   }
 
   100% {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 
