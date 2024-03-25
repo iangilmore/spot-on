@@ -155,7 +155,7 @@ h2, h3, h4 {
 .game {
   display: grid;
   height: 100dvh;
-  /* max-height: 768px; */
+  max-height: 1024px;
   grid-template-columns: 1fr;
   grid-template-rows: 48px 1fr;
   grid-auto-rows: 1fr;
@@ -190,7 +190,6 @@ h2, h3, h4 {
   transform: rotate(225deg);
   display: inherit;
 }
-
 
 .game-area {
   height: 100%;
@@ -273,8 +272,6 @@ h2, h3, h4 {
   width: 100%;
   height: 60%;
 }
-
-
 
 .answer-b {
   grid-area: answer-b;
@@ -390,7 +387,7 @@ h2, h3, h4 {
 .results {  
   display: grid;
   height: 100dvh;
-  max-height: 768px;
+  max-height: 1024px;
   grid-template-columns: 1fr;
   grid-template-rows: 48px 1fr;
   gap: 0px 0px;
@@ -428,6 +425,7 @@ h2, h3, h4 {
 .message {
   grid-area: message;
   align-self: end;
+  text-align: center;
 }
 
 .final-stats {
