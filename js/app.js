@@ -325,7 +325,7 @@ function updateImageClasses() {
     nextImage.classList.add('current')
     nextImage.classList.remove('next')
     addTouchToCurrentImageCard()
-    updateAnswerOptions(currentImageIndex + 1)
+    setTimeout(() => updateAnswerOptions(currentImageIndex + 1), 250);
   } else {
     setTimeout(() => finishGame(),500)
   }
