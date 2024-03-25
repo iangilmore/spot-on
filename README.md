@@ -1,5 +1,6 @@
 <h2 align="center">
   <img src="img/logo-main.png" width="200" alt="Spot On">
+  <br>
   <em>Think Fast</em>
 </h2>
 
