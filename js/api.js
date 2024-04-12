@@ -9,7 +9,7 @@ let resultHistory
 async function getUser() {
   try {
     const response = await fetch(
-      `${apiUrl}/user/`, {
+      `${apiUrl}user/`, {
         method: 'GET',
         credentials: 'include'
       }
