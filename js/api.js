@@ -1,4 +1,4 @@
-const apiUrl = 'https://spot-on-api-61c1dd69af4d.herokuapp.com/'
+const apiUrl = 'https://spot-on-api-61c1dd69af4d.herokuapp.com'
 
 let user
 let userId
@@ -9,7 +9,7 @@ let resultHistory
 async function getUser() {
   try {
     const response = await fetch(
-      `${apiUrl}user/`, {
+      `${apiUrl}/user/`, {
         method: 'GET',
         credentials: 'include'
       }
