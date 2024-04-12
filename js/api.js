@@ -1,9 +1,9 @@
-const apiUrl = 'https://spot-on-api-61c1dd69af4d.herokuapp.com'
+const apiUrl = 'https://api.spot-on.webdevstuff.ninja'
 
 let user
 let userId
 let firstName
-let todayPuzzles
+let currentPuzzles
 let resultHistory
 
 async function getUser() {
@@ -18,6 +18,21 @@ async function getUser() {
     userId = user._id
     firstName = user.firstName || null
     resultHistory = user.results || null
+  } catch (error) {
+    console.error(`Couldn't get user:` + error)
+  }
+}
+
+async function getCurrentPuzzles() {
+  try {
+    const response = await fetch(
+      `${apiUrl}/puzzles/?date=20240412`, {
+        method: 'GET',
+        
+        credentials: 'include'
+      }
+    )
+    currentPuzzles = await response.json()
   } catch (error) {
     console.error(error)
   }
