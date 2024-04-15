@@ -69,6 +69,7 @@ let shareResults = {}
 
 /*------------------------ Cached Element References ------------------------*/
 
+const loggedInParam = urlParams.get('logged_in')
 const bodyEl = document.querySelector('body')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
@@ -77,6 +78,7 @@ const playBtn = document.querySelector('#play-btn')
 const howToBtn = document.querySelector('#how-to-btn')
 const startParentEl = document.querySelector('.start-parent')
 const startEl = document.querySelector('.start')
+const welcomeMsgEl = document.querySelector('#welcome-msg')
 const dateEl = document.querySelector('.date')
 const easyBtn = document.querySelector('.easy-btn')
 const medBtn = document.querySelector('.med-btn')
@@ -103,6 +105,8 @@ const shareBtn = document.querySelector('.share-btn')
 const playAnotherBtn = document.querySelector('.play-another')
 
 /*----------------------------- Event Listeners -----------------------------*/
+
+
 logInBtn.addEventListener('click', () => {
   window.location.href = `${apiUrl}/user/auth`
 })
@@ -110,7 +114,6 @@ playBtn.addEventListener('click', () => {
   hideLanding()
   showStart()
 })
-
 
 easyBtn.addEventListener('click', render)
 medBtn.addEventListener('click', render)
@@ -127,6 +130,25 @@ shareBtn.addEventListener('click', async () => {
 })
 playAnotherBtn.addEventListener('click', backToStart)
 /*-------------------------------- Functions --------------------------------*/
+
+async function applyLoggedInChanges() {
+if (loggedInParam == 'true') {
+  hideLanding()
+  showStart()
+  try {
+    await getUser()
+    welcomeUser()
+  } catch (error) {
+    console.error(`Couldn't get user: ${error}`)
+  }
+}
+}
+
+function welcomeUser() {
+  if (firstName) {
+    welcomeMsgEl.textContent = `Welcome back ${firstName}`
+  }
+}
 
 init()
 
