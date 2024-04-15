@@ -25,8 +25,14 @@ const today = new Date().toLocaleDateString('en-US', dateOptions)
 
 /*---------------------------- Variables (state) ----------------------------*/
 // NEW
+let user
+let userId
+let firstName
+let resultHistory
+
+let currentPuzzles
 let chosenPuzzle
-let currentPuzzleCards
+let chosenPuzzleCards
 
 
 let chosenLevel
@@ -66,6 +72,11 @@ let shareResults = {}
 const bodyEl = document.querySelector('body')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
+const logInBtn = document.querySelector('#log-in-btn')
+const playBtn = document.querySelector('#play-btn')
+const howToBtn = document.querySelector('#how-to-btn')
+const startParentEl = document.querySelector('.start-parent')
+const startEl = document.querySelector('.start')
 const dateEl = document.querySelector('.date')
 const easyBtn = document.querySelector('.easy-btn')
 const medBtn = document.querySelector('.med-btn')
@@ -92,6 +103,15 @@ const shareBtn = document.querySelector('.share-btn')
 const playAnotherBtn = document.querySelector('.play-another')
 
 /*----------------------------- Event Listeners -----------------------------*/
+logInBtn.addEventListener('click', () => {
+  window.location.href = `${apiUrl}/user/auth`
+})
+playBtn.addEventListener('click', () => {
+  hideLanding()
+  showStart()
+})
+
+
 easyBtn.addEventListener('click', render)
 medBtn.addEventListener('click', render)
 hardBtn.addEventListener('click', render)
@@ -105,7 +125,7 @@ shareBtn.addEventListener('click', async () => {
     ''
   }
 })
-playAnotherBtn.addEventListener('click', backToLanding)
+playAnotherBtn.addEventListener('click', backToStart)
 /*-------------------------------- Functions --------------------------------*/
 
 init()
@@ -158,7 +178,7 @@ function render(click) {
   resultsInEmoji = []
   resultsInEmojiString = ''
   updateStats()
-  hideLanding()
+  hideStart()
   getLevelImages()
   buildImageCards()
   updateAnswerOptions(0)
@@ -170,12 +190,22 @@ function render(click) {
 function hideLanding() {
   landingParentEl.classList.add('fade-out')
   landingParentEl.classList.remove('fade-in')
-
 }
 
 function showLanding() {
   landingParentEl.classList.remove('fade-out')
   landingParentEl.classList.add('fade-in')
+}
+
+function hideStart() {
+  startParentEl.classList.add('fade-out')
+  startParentEl.classList.remove('fade-in')
+
+}
+
+function showStart() {
+  startParentEl.classList.remove('fade-out')
+  startParentEl.classList.add('fade-in')
 }
 
 function hideGame() {
@@ -229,22 +259,14 @@ function getLevelImages() {
   }
 }
 
-async function newGetLevelImages() {
-  try {
-    chosenPuzzle = await currentPuzzles.find(puzzle => puzzle.levelValue === chosenLevel)
-    if (chosenPuzzle) {
-      console.log(`Puzzle found for level ${chosenLevel}`)
-      console.log(chosenPuzzle)
-    } else {
-      console.error(`No puzzle found for level ${chosenLevel}`)
-      return
-    }
-    currentPuzzleCards = chosenPuzzle.puzzleCards
-    console.log('Puzzle cards have been assigned:');
-    console.log(currentPuzzleCards);
-  } catch (error) {
-    console.error(error)
+function newGetLevelImages() {
+  chosenPuzzle = currentPuzzles.find(
+    puzzle => puzzle.levelValue === chosenLevel)
+  if (!chosenPuzzle) {
+    console.error(`No puzzle found for level ${chosenLevel}`)
+    return
   }
+  chosenPuzzleCards = chosenPuzzle.puzzleCards
 }
 
 function buildImageCards() {
@@ -275,7 +297,7 @@ function buildImageCards() {
 
 function leave() {
   hideGame()
-  showLanding()
+  showStart()
   stopTimer()
   removeImageCards()
   playTimeSeconds = -1
@@ -415,9 +437,9 @@ function removeImageCards() {
   document.querySelectorAll('.image-card').forEach(imageCard => imageCard.remove())
 }
 
-function backToLanding() {
+function backToStart() {
   hideResults()
-  showLanding()
+  showStart()
   playTimeSeconds = -1
   playTimeDisplay = '0:00'
 }

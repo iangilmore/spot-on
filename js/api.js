@@ -1,11 +1,5 @@
 const apiUrl = 'https://api.spot-on.webdevstuff.ninja'
 
-let user
-let userId
-let firstName
-let currentPuzzles
-let resultHistory
-
 async function getUser() {
   try {
     const response = await fetch(
