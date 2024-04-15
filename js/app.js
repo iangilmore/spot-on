@@ -71,9 +71,11 @@ let shareResults = {}
 const urlParams = new URLSearchParams(window.location.search)
 const loggedInParam = urlParams.get('logged_in')
 const bodyEl = document.querySelector('body')
+const menuBtn = document.querySelector('.menu-btn')
+const navEl = document.querySelector('nav')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
-const logInBtn = document.querySelector('#log-in-btn')
+const logInBtn = document.querySelector('.log-in-btn')
 const playBtn = document.querySelector('#play-btn')
 const howToBtn = document.querySelector('#how-to-btn')
 const startParentEl = document.querySelector('.start-parent')
@@ -106,6 +108,9 @@ const playAnotherBtn = document.querySelector('.play-another')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+menuBtn.addEventListener('click', () => {
+  navEl.style.display = navEl.style.display === 'none' ? 'block' : 'none';
+})
 
 logInBtn.addEventListener('click', () => {
   hideLanding()
