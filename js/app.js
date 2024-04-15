@@ -24,6 +24,11 @@ const dateOptions = {
 const today = new Date().toLocaleDateString('en-US', dateOptions)
 
 /*---------------------------- Variables (state) ----------------------------*/
+// NEW
+let chosenPuzzle
+let currentPuzzleCards
+
+
 let chosenLevel
 let gameLength = 10
 let counter
@@ -224,9 +229,22 @@ function getLevelImages() {
   }
 }
 
-function newGetLevelImages() {
-  let chosenPuzzle = currentPuzzles.find(puzzle => puzzle.levelValue === chosenLevel)
-  let puzzleCards = chosenPuzzle.puzzleCards
+async function newGetLevelImages() {
+  try {
+    chosenPuzzle = await currentPuzzles.find(puzzle => puzzle.levelValue === chosenLevel)
+    if (chosenPuzzle) {
+      console.log(`Puzzle found for level ${chosenLevel}`)
+      console.log(chosenPuzzle)
+    } else {
+      console.error(`No puzzle found for level ${chosenLevel}`)
+      return
+    }
+    currentPuzzleCards = chosenPuzzle.puzzleCards
+    console.log('Puzzle cards have been assigned:');
+    console.log(currentPuzzleCards);
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 function buildImageCards() {
