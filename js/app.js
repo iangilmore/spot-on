@@ -68,7 +68,7 @@ let answerB
 let shareResults = {}
 
 /*------------------------ Cached Element References ------------------------*/
-
+const urlParams = new URLSearchParams(window.location.search)
 const loggedInParam = urlParams.get('logged_in')
 const bodyEl = document.querySelector('body')
 const landingParentEl = document.querySelector('.landing-parent')
