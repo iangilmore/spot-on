@@ -21,12 +21,10 @@ async function logOut() {
   try {
     const response = await fetch(
       `${apiUrl}/user/logout`, {
-        method: 'GET',
-        credentials: 'include'
+        method: 'GET'
       }
     )
-    const data = await response.json()
-    return data
+    await response
   } catch (error) {
     console.error(`Couldn't log out:` + error)
   }
