@@ -137,8 +137,12 @@ shareBtn.addEventListener('click', async () => {
 playAnotherBtn.addEventListener('click', backToStart)
 /*-------------------------------- Functions --------------------------------*/
 
-async function applyLoggedInChanges() {
 if (loggedInParam == 'true') {
+  console.log('Logged in');
+  applyLoggedInChanges()
+} else {console.log('loggedInParam not showing as true');}
+
+async function applyLoggedInChanges() {
   hideLanding()
   showStart()
   try {
