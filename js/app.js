@@ -112,7 +112,7 @@ menuBtn.addEventListener('click', () => {
   navEl.style.display = navEl.style.display === 'none' ? 'block' : 'none';
 })
 
-logInBtn.addEventListener('click', () => {
+logInBtns.addEventListener('click', () => {
   hideLanding()
   setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
 })
