@@ -74,6 +74,7 @@ const bodyEl = document.querySelector('body')
 const menuBtn = document.querySelector('.menu-btn')
 const navEl = document.querySelector('nav')
 const navLogInBtn = document.querySelector('#nav-log-in')
+const navLogOutBtn = document.querySelector('#nav-log-out')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
 const landingLogInBtn = document.querySelector('#log-in-btn-landing')
@@ -118,6 +119,8 @@ navLogInBtn.addEventListener('click', () => {
   setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
 })
 
+navLogOutBtn.addEventListener('click', logOut)
+
 landingLogInBtn.addEventListener('click', () => {
   hideLanding()
   setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
@@ -127,6 +130,8 @@ playBtn.addEventListener('click', () => {
   hideLanding()
   showStart()
 })
+
+
 
 easyBtn.addEventListener('click', render)
 medBtn.addEventListener('click', render)
