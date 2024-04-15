@@ -152,7 +152,6 @@ async function applyLoggedInChanges() {
     console.error(`Couldn't get user: ${error}`)
   }
 }
-}
 
 function welcomeUser() {
   if (firstName) {
