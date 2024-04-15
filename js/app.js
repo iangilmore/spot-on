@@ -75,7 +75,7 @@ const menuBtn = document.querySelector('.menu-btn')
 const navEl = document.querySelector('nav')
 const landingParentEl = document.querySelector('.landing-parent')
 const landingEl = document.querySelector('.landing')
-const logInBtn = document.querySelector('.log-in-btn')
+const logInBtns = document.querySelectorAll('.log-in-btn')
 const playBtn = document.querySelector('#play-btn')
 const howToBtn = document.querySelector('#how-to-btn')
 const startParentEl = document.querySelector('.start-parent')
@@ -151,12 +151,17 @@ async function applyLoggedInChanges() {
   } catch (error) {
     console.error(`Couldn't get user: ${error}`)
   }
+  hideLogInBtns()
 }
 
 function welcomeUser() {
   if (firstName) {
     welcomeMsgEl.textContent = `Welcome back ${firstName}`
   }
+}
+
+function hideLogInBtns() {
+  logInBtns.classList.add('display-none')
 }
 
 init()
