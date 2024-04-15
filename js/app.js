@@ -108,7 +108,8 @@ const playAnotherBtn = document.querySelector('.play-another')
 
 
 logInBtn.addEventListener('click', () => {
-  window.location.href = `${apiUrl}/user/auth`
+  hideLanding()
+  setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
 })
 playBtn.addEventListener('click', () => {
   hideLanding()
