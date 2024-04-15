@@ -111,6 +111,22 @@ function init() {
   medBtn.textContent = levels[1].name
   hardBtn.textContent = levels[2].name
   handleData()
+  getTodayYYYYMMDD()
+  getCurrentPuzzles()
+}
+
+function getTodayYYYYMMDD() {
+  let today = new Date()
+  let yyyy = today.getFullYear()
+  let mm = today.getMonth() + 1
+  let dd = today.getDate()
+  if (mm < 10) {
+    mm = '0' + mm
+  }
+  if (dd < 10) {
+    dd = '0' + dd
+  }
+  YYYYMMDD = yyyy + mm + dd
 }
 
 function handleData(params) {
@@ -206,6 +222,11 @@ function getLevelImages() {
       count++
     }
   }
+}
+
+function newGetLevelImages() {
+  let chosenPuzzle = currentPuzzles.find(puzzle => puzzle.levelValue === chosenLevel)
+  let puzzleCards = chosenPuzzle.puzzleCards
 }
 
 function buildImageCards() {

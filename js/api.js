@@ -26,13 +26,31 @@ async function getUser() {
 async function getCurrentPuzzles() {
   try {
     const response = await fetch(
-      `${apiUrl}/puzzles/?date=20240412`, {
+      `${apiUrl}/puzzles/?date=${YYYYMMDD}`, {
         method: 'GET',
-        
         credentials: 'include'
       }
     )
     currentPuzzles = await response.json()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+async function submitResult(result) {
+  try {
+    const response = await fetch(
+      `${apiUrl}/results/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(result),
+        credentials: 'include'
+      }
+    )
+    const newResult = await response.json()
+    return newResult
   } catch (error) {
     console.error(error)
   }
