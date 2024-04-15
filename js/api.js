@@ -17,18 +17,6 @@ async function getUser() {
   }
 }
 
-async function logOut() {
-  try {
-    const response = await fetch(
-      `${apiUrl}/user/logout`, {
-        method: 'GET'
-      }
-    )
-    await response
-  } catch (error) {
-    console.error(`Couldn't log out:` + error)
-  }
-}
 
 async function getCurrentPuzzles() {
   try {

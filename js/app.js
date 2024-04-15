@@ -119,7 +119,9 @@ navLogInBtn.addEventListener('click', () => {
   setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
 })
 
-navLogOutBtn.addEventListener('click', logOut)
+navLogOutBtn.addEventListener('click', () => {
+  window.location.href = `${apiUrl}/user/log-out`
+})
 
 landingLogInBtn.addEventListener('click', () => {
   hideLanding()
