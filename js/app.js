@@ -116,6 +116,7 @@ logInBtns.addEventListener('click', () => {
   hideLanding()
   setTimeout(() => window.location.href = `${apiUrl}/user/auth`, 500)
 })
+
 playBtn.addEventListener('click', () => {
   hideLanding()
   showStart()
