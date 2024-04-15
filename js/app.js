@@ -152,9 +152,8 @@ playAnotherBtn.addEventListener('click', backToStart)
 /*-------------------------------- Functions --------------------------------*/
 
 if (loggedInParam == 'true') {
-  console.log('Logged in');
   applyLoggedInChanges()
-} else {console.log('loggedInParam not showing as true');}
+}
 
 async function applyLoggedInChanges() {
   hideLanding()
